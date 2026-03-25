@@ -100,35 +100,36 @@ export default function Experience() {
 
           <div className="flex flex-col gap-20 md:gap-24">
             {EXPERIENCE.map((job, i) => {
-              const isLeft = i % 2 === 0;
+              const onRight = i % 2 === 1;
               return (
                 <ScrollReveal key={job.company + job.dates} delay={i * 60}>
-                  <div className="relative md:grid md:grid-cols-[1fr_auto_1fr] md:gap-10 items-start">
+                  <div className="relative">
 
-                    {/* Left content area */}
-                    <div className={`${isLeft ? "md:text-right" : "md:order-3"}`}>
-                      {isLeft && (
-                        <EntryContent job={job} align="right" />
-                      )}
-                      {!isLeft && <div className="hidden md:block" />}
-                    </div>
+                    {/* Dot — pinned to center spine */}
+                    <span className="hidden md:block absolute left-1/2 -translate-x-1/2 top-2 w-3 h-3 rounded-full bg-purple" />
 
-                    {/* Center dot */}
-                    <div className="hidden md:flex items-start justify-center pt-2">
-                      <span className="w-3 h-3 rounded-full bg-purple flex-shrink-0" />
-                    </div>
-
-                    {/* Right content area */}
-                    <div className={`${isLeft ? "md:order-3" : ""}`}>
-                      {!isLeft && (
-                        <EntryContent job={job} align="left" />
-                      )}
-                      {isLeft && <div className="hidden md:block" />}
-                    </div>
-
-                    {/* Mobile-only: no grid, just render content */}
-                    <div className="md:hidden">
-                      <EntryContent job={job} align="left" />
+                    {/* Content — 45% wide, alternating sides */}
+                    <div className={`md:w-[45%] ${onRight ? "md:ml-auto" : ""}`}>
+                      <h3 className="text-teal text-2xl font-bold mb-1">
+                        {job.company}
+                      </h3>
+                      <p className="text-white text-lg font-medium mb-2">
+                        {job.role}
+                      </p>
+                      <p className="text-muted text-sm font-mono mb-5">
+                        {job.dates} · {job.location}
+                      </p>
+                      <ul className="flex flex-col gap-2.5">
+                        {job.bullets.map((b, j) => (
+                          <li
+                            key={j}
+                            className="flex items-start gap-2.5 text-base leading-relaxed"
+                          >
+                            <span className="text-teal mt-1 flex-shrink-0 text-sm">▸</span>
+                            <span className="text-muted">{b}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
 
                   </div>
@@ -140,41 +141,5 @@ export default function Experience() {
         </div>
       </div>
     </section>
-  );
-}
-
-function EntryContent({
-  job,
-  align,
-}: {
-  job: (typeof EXPERIENCE)[number];
-  align: "left" | "right";
-}) {
-  const textAlign = align === "right" ? "md:text-right" : "";
-  const bulletAlign = align === "right" ? "md:justify-end" : "";
-
-  return (
-    <div className={textAlign}>
-      <h3 className="text-teal text-2xl font-bold mb-1">
-        {job.company}
-      </h3>
-      <p className="text-white text-lg font-medium mb-2">
-        {job.role}
-      </p>
-      <p className="text-muted text-sm font-mono mb-5">
-        {job.dates} · {job.location}
-      </p>
-      <ul className="flex flex-col gap-2.5">
-        {job.bullets.map((b, j) => (
-          <li
-            key={j}
-            className={`flex items-start gap-2.5 text-base leading-relaxed ${bulletAlign}`}
-          >
-            <span className="text-teal mt-1 flex-shrink-0 text-sm">▸</span>
-            <span className="text-muted">{b}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
   );
 }
