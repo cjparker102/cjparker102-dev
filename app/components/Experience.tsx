@@ -108,15 +108,15 @@ export default function Experience() {
                     {/* Dot — pinned to center spine */}
                     <span className="hidden md:block absolute left-1/2 -translate-x-1/2 top-2 w-3 h-3 rounded-full bg-purple" />
 
-                    {/* Content — 45% wide, alternating sides */}
-                    <div className={`md:w-[45%] ${onRight ? "md:ml-auto" : ""}`}>
-                      <h3 className="text-teal text-2xl font-bold mb-1">
+                    {/* Content — 46% wide, alternating sides, 4% gap to spine */}
+                    <div className={`md:w-[46%] ${onRight ? "md:ml-[54%]" : ""}`}>
+                      <h3 className={`text-teal text-2xl font-bold mb-1 ${onRight ? "" : "md:text-right"}`}>
                         {job.company}
                       </h3>
-                      <p className="text-white text-lg font-medium mb-2">
+                      <p className={`text-white text-lg font-medium mb-2 ${onRight ? "" : "md:text-right"}`}>
                         {job.role}
                       </p>
-                      <p className="text-muted text-sm font-mono mb-5">
+                      <p className={`text-muted text-sm font-mono mb-5 ${onRight ? "" : "md:text-right"}`}>
                         {job.dates} · {job.location}
                       </p>
                       <ul className="flex flex-col gap-2.5">
