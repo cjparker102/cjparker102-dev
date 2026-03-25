@@ -54,14 +54,14 @@ export default function Contact() {
               <div className="flex flex-col gap-3">
                 {LINKS.map((item) => (
                   <div key={item.label} className="flex items-center gap-2 group">
-                    <span className="text-muted/50 text-xs select-none">$</span>
-                    <span className="text-muted text-xs w-16 shrink-0">{item.label}</span>
+                    <span className="text-muted/50 text-sm select-none">$</span>
+                    <span className="text-muted text-sm w-20 shrink-0">{item.label}</span>
                     <a
                       href={item.href}
                       target={item.href.startsWith("mailto") ? undefined : "_blank"}
                       rel="noopener noreferrer"
                       className={`
-                        text-xs transition-colors duration-200
+                        text-sm transition-colors duration-200
                         ${item.accent === "purple"
                           ? "text-purple/80 hover:text-white"
                           : "text-teal/80   hover:text-white"}

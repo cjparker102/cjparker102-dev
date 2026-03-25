@@ -34,11 +34,11 @@ export default function About() {
           <div className="flex flex-col gap-6">
 
             <ScrollReveal delay={100}>
-              <p className="text-muted text-sm font-mono leading-relaxed">
+              <p className="text-muted text-base font-mono leading-relaxed">
                 <span className="text-teal">$ </span>
                 <span className="text-purple">cat</span> about.txt
               </p>
-              <p className="mt-3 text-sm leading-7 text-[#c9d1d9]">
+              <p className="mt-3 text-base leading-7 text-white">
                 I&apos;m a security-focused technologist working at{" "}
                 <span className="text-purple">ID.me</span> — an identity
                 verification platform trusted by government agencies and
@@ -47,7 +47,7 @@ export default function About() {
                 <span className="text-teal">access management</span>, and
                 user trust.
               </p>
-              <p className="mt-3 text-sm leading-7 text-[#c9d1d9]">
+              <p className="mt-3 text-base leading-7 text-white">
                 I&apos;m actively building toward a dedicated IAM engineering
                 role — earning Okta certifications, exploring AI automation in
                 identity workflows, and completing my MS in Computer Science at
@@ -61,10 +61,10 @@ export default function About() {
                 {STATS.map(({ label, value }) => (
                   <div
                     key={label}
-                    className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-sm font-mono"
+                    className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-base font-mono"
                   >
                     <span className="text-teal whitespace-nowrap">▸ {label}:</span>
-                    <span className="text-[#c9d1d9]">{value}</span>
+                    <span className="text-white">{value}</span>
                   </div>
                 ))}
               </div>
@@ -86,18 +86,18 @@ export default function About() {
               </div>
 
               {/* Command line */}
-              <p className="text-sm font-mono mb-4">
+              <p className="text-base font-mono mb-4">
                 <span className="text-teal">$ </span>
                 <span className="text-purple">cat</span>
-                <span className="text-[#c9d1d9]"> status.txt</span>
+                <span className="text-white"> status.txt</span>
               </p>
 
               {/* Status lines */}
               <div className="flex flex-col gap-3">
                 {STATUS_LINES.map(({ key, text }) => (
-                  <div key={key} className="flex items-start gap-3 text-sm font-mono">
+                  <div key={key} className="flex items-start gap-3 text-base font-mono">
                     <span className="text-purple mt-0.5">→</span>
-                    <span className="text-[#c9d1d9] leading-relaxed">{text}</span>
+                    <span className="text-white leading-relaxed">{text}</span>
                   </div>
                 ))}
               </div>

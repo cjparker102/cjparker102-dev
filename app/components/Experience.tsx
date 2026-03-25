@@ -140,7 +140,7 @@ export default function Experience() {
                     {/* Bullets */}
                     <ul className="flex flex-col gap-2">
                       {job.bullets.map((b, j) => (
-                        <li key={j} className="flex items-start gap-2 text-sm text-muted leading-relaxed">
+                        <li key={j} className="flex items-start gap-2 text-base text-muted leading-relaxed">
                           <span className="text-purple mt-0.5 flex-shrink-0">▸</span>
                           <span>{b}</span>
                         </li>

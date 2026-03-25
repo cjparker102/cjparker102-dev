@@ -125,7 +125,7 @@ export default function Projects() {
                   <div className={`border-t ${a.rule}`} />
 
                   {/* Description */}
-                  <p className="text-muted text-xs leading-relaxed flex-1">
+                  <p className="text-muted text-sm leading-relaxed flex-1">
                     {project.description}
                   </p>
 

@@ -52,13 +52,13 @@ const ACCENT = {
     header:  "text-teal",
     card:    "neon-card",
     badge:   "border border-purple/30 text-muted hover:border-purple hover:text-white",
-    glow:    "hover:shadow-[0_0_10px_rgba(123,66,188,0.55)]",
+    glow:    "hover:shadow-[0_0_10px_rgba(74,158,191,0.55)]",
   },
   teal: {
     header:  "text-teal",
     card:    "neon-card-teal",
     badge:   "border border-teal/30 text-muted hover:border-teal hover:text-white",
-    glow:    "hover:shadow-[0_0_10px_rgba(29,158,117,0.55)]",
+    glow:    "hover:shadow-[0_0_10px_rgba(232,168,62,0.55)]",
   },
 };
 
