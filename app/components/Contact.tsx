@@ -1,141 +1,80 @@
 import ScrollReveal from "./ScrollReveal";
 
-const LINKS = [
-  {
-    label: "email",
-    display: "iam@cjparker102.dev",
-    href: "mailto:iam@cjparker102.dev",
-    accent: "purple" as const,
-  },
-  {
-    label: "github",
-    display: "github.com/cjparker102",
-    href: "https://github.com/cjparker102",
-    accent: "teal" as const,
-  },
-  {
-    label: "linkedin",
-    display: "linkedin.com/in/cjparker102",
-    href: "https://linkedin.com/in/cjparker102",
-    accent: "purple" as const,
-  },
-] as const;
-
 export default function Contact() {
   return (
-    <section id="contact" className="relative py-28 px-6">
-      <div className="max-w-5xl mx-auto">
+    <section id="contact" className="relative py-32 px-6">
+      <div className="max-w-4xl mx-auto text-center">
 
-        {/* Section header */}
+        {/* Section label */}
         <ScrollReveal>
-          <p className="section-label mb-2">// CONTACT</p>
-          <h2 className="text-3xl font-bold text-white mb-14">
-            Let&apos;s Connect<span className="text-purple">.</span>
-          </h2>
+          <p className="section-label mb-6 text-center">// LET&apos;S CONNECT</p>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-2 gap-8 items-start">
+        {/* Headline */}
+        <ScrollReveal delay={100}>
+          <p className="text-white text-2xl sm:text-3xl lg:text-4xl font-light leading-relaxed mb-14">
+            Ready to talk IAM, identity automation,
+            <br className="hidden sm:block" />
+            or AI-powered security tools?
+          </p>
+        </ScrollReveal>
 
-          {/* Terminal contact card */}
-          <ScrollReveal>
-            <div className="neon-card bg-surface rounded-sm p-6 font-mono">
-
-              {/* Terminal chrome */}
-              <div className="flex items-center gap-1.5 mb-5">
-                <span className="w-2.5 h-2.5 rounded-full bg-red-500/70" />
-                <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
-                <span className="w-2.5 h-2.5 rounded-full bg-green-500/70" />
-                <span className="ml-3 text-muted/40 text-[10px] tracking-widest">
-                  contact.sh
-                </span>
-              </div>
-
-              {/* Links */}
-              <div className="flex flex-col gap-3">
-                {LINKS.map((item) => (
-                  <div key={item.label} className="flex items-center gap-2 group">
-                    <span className="text-muted/50 text-sm select-none">$</span>
-                    <span className="text-muted text-sm w-20 shrink-0">{item.label}</span>
-                    <a
-                      href={item.href}
-                      target={item.href.startsWith("mailto") ? undefined : "_blank"}
-                      rel="noopener noreferrer"
-                      className={`
-                        text-sm transition-colors duration-200
-                        ${item.accent === "purple"
-                          ? "text-purple/80 hover:text-white"
-                          : "text-teal/80   hover:text-white"}
-                      `}
-                    >
-                      <span className="opacity-50 mr-1">▸</span>
-                      {item.display}
-                    </a>
-                  </div>
-                ))}
-              </div>
-
-              {/* Prompt line */}
-              <div className="mt-5 flex items-center gap-2">
-                <span className="text-muted/50 text-xs select-none">$</span>
-                <span className="text-muted/30 text-xs cursor-blink" />
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {/* Location + status panel */}
-          <ScrollReveal delay={120}>
-            <div className="neon-card-teal bg-surface rounded-sm p-6 flex flex-col gap-5">
-
-              <div>
-                <p className="text-teal font-mono text-[10px] tracking-widest mb-2">
-                  // LOCATION
-                </p>
-                <p className="text-white font-bold text-sm">McLean, VA</p>
-                <p className="text-muted text-xs mt-0.5">Washington DC Area</p>
-              </div>
-
-              <div className="border-t border-teal/15" />
-
-              <div>
-                <p className="text-teal font-mono text-[10px] tracking-widest mb-2">
-                  // STATUS
-                </p>
-                <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse-dot shrink-0" />
-                  <p className="text-white text-xs font-mono">Open to opportunities</p>
-                </div>
-              </div>
-
-              <div className="border-t border-teal/15" />
-
-              <div>
-                <p className="text-teal font-mono text-[10px] tracking-widest mb-2">
-                  // FOCUS
-                </p>
-                <div className="flex flex-wrap gap-1.5">
-                  {["IAM", "Security Engineering", "Identity Automation"].map((tag) => (
-                    <span
-                      key={tag}
-                      className="border border-teal/30 text-teal/70 bg-teal/5 text-[10px] font-mono px-2 py-0.5 rounded-sm"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-            </div>
-          </ScrollReveal>
-
-        </div>
-
-        {/* Footer line */}
+        {/* Email CTA */}
         <ScrollReveal delay={200}>
-          <div className="mt-20 pt-8 border-t border-white/5 flex items-center justify-between">
-            <p className="text-muted/40 text-[10px] font-mono">
+          <a
+            href="mailto:iam@cjparker102.dev"
+            className="email-cta inline-block font-mono text-2xl sm:text-3xl lg:text-4xl tracking-wide mb-16 transition-all duration-300"
+          >
+            <span className="text-teal">[</span>
+            <span className="text-white"> iam@cjparker102.dev </span>
+            <span className="text-teal">]</span>
+          </a>
+        </ScrollReveal>
+
+        {/* Links row */}
+        <ScrollReveal delay={300}>
+          <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-2 font-mono text-sm mb-10">
+            <a
+              href="https://github.com/cjparker102"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-purple transition-colors duration-200 hover:text-white"
+            >
+              github.com/cjparker102
+            </a>
+            <span className="text-muted/30">·</span>
+            <a
+              href="https://linkedin.com/in/cjparker102"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-purple transition-colors duration-200 hover:text-white"
+            >
+              linkedin.com/in/cjparker102
+            </a>
+            <span className="text-muted/30">·</span>
+            <span className="text-muted">McLean, VA</span>
+          </div>
+        </ScrollReveal>
+
+        {/* Status */}
+        <ScrollReveal delay={400}>
+          <div className="flex items-center justify-center gap-2 mb-20">
+            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse-dot flex-shrink-0" />
+            <span className="text-muted text-sm font-mono">Open to opportunities</span>
+          </div>
+        </ScrollReveal>
+
+        {/* Footer */}
+        <ScrollReveal delay={500}>
+          <div
+            className="h-px mb-8"
+            style={{ background: "linear-gradient(to right, transparent, rgba(255,255,255,0.15) 20%, rgba(255,255,255,0.15) 80%, transparent)" }}
+          />
+          <div className="flex items-center justify-between">
+            <p className="text-muted/40 text-xs font-mono">
               cjparker102.dev — {new Date().getFullYear()}
             </p>
-            <p className="text-muted/40 text-[10px] font-mono">
+            <p className="text-muted/40 text-xs font-mono">
               built with Next.js + Tailwind
             </p>
           </div>

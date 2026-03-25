@@ -232,3 +232,11 @@ body {
 .cert-card:hover {
   border-color: rgba(74,158,191,0.4);
 }
+
+/* ─── Email CTA ─────────────────────────────────────────────── */
+.email-cta {
+  cursor: pointer;
+}
+.email-cta:hover {
+  text-shadow: 0 0 20px rgba(74,158,191,0.4), 0 0 40px rgba(74,158,191,0.15);
+}
