@@ -35,7 +35,7 @@ export default function Navbar() {
           href="#hero"
           className="font-mono text-sm font-bold tracking-widest select-none"
         >
-          <span className="text-purple">{`{`}</span>
+          <span className="text-teal">{`{`}</span>
           <span className="text-white">CJPARKER102.DEV</span>
           <span className="text-teal">{`}`}</span>
         </a>

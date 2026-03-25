@@ -94,7 +94,7 @@ export default function Experience() {
             className="absolute left-3 top-2 bottom-2 w-px"
             style={{
               background:
-                "linear-gradient(to bottom, transparent, #7B42BC 8%, #7B42BC 92%, transparent)",
+                "linear-gradient(to bottom, transparent, #4A9EBF 8%, #4A9EBF 92%, transparent)",
             }}
           />
 

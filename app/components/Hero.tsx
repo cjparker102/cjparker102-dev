@@ -54,7 +54,7 @@ export default function Hero() {
         className="pointer-events-none absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full"
         style={{
           background:
-            "radial-gradient(circle, rgba(123,66,188,0.12) 0%, transparent 65%)",
+            "radial-gradient(circle, rgba(74,158,191,0.12) 0%, transparent 65%)",
         }}
       />
       {/* Teal radial glow — bottom-right */}
@@ -62,7 +62,7 @@ export default function Hero() {
         className="pointer-events-none absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full"
         style={{
           background:
-            "radial-gradient(circle, rgba(29,158,117,0.08) 0%, transparent 65%)",
+            "radial-gradient(circle, rgba(232,168,62,0.08) 0%, transparent 65%)",
         }}
       />
 
@@ -89,7 +89,7 @@ export default function Hero() {
           className="flex items-center gap-1 text-2xl sm:text-3xl font-mono mb-8 animate-fade-in-up"
           style={{ animationDelay: "0.45s" }}
         >
-          <span className="text-teal">[</span>
+          <span className="text-purple">[</span>
           <span className="text-purple" style={{ minWidth: "22ch" }}>
             {displayed}
           </span>
@@ -99,7 +99,7 @@ export default function Hero() {
           >
             _
           </span>
-          <span className="text-teal">]</span>
+          <span className="text-purple">]</span>
         </div>
 
         {/* Tagline */}
