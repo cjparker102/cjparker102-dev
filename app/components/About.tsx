@@ -12,7 +12,6 @@ const STATUS_LINES = [
   { key: "role",     text: "IT Support Analyst @ ID.me"                       },
   { key: "focus",    text: "Building AI-powered IAM tools"                    },
   { key: "studying", text: "MS CS · Texas A&M Commerce"                       },
-  { key: "goal",     text: "Full-time IAM / Identity Engineer by 2026"        },
 ];
 
 export default function About() {
