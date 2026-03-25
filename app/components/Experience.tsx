@@ -76,12 +76,12 @@ const EXPERIENCE = [
 export default function Experience() {
   return (
     <section id="experience" className="relative py-28 px-6">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-5xl mx-auto">
 
         {/* Section header */}
         <ScrollReveal>
           <p className="section-label mb-2">// EXPERIENCE</p>
-          <h2 className="text-3xl font-bold text-white mb-16">
+          <h2 className="text-3xl font-bold text-white mb-20">
             Where I&apos;ve Worked<span className="text-purple">.</span>
           </h2>
         </ScrollReveal>
@@ -89,72 +89,92 @@ export default function Experience() {
         {/* Timeline */}
         <div className="relative">
 
-          {/* Vertical spine */}
+          {/* Center spine — hidden on mobile, visible md+ */}
           <div
-            className="absolute left-3 top-2 bottom-2 w-px"
+            className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px"
             style={{
               background:
-                "linear-gradient(to bottom, transparent, #4A9EBF 8%, #4A9EBF 92%, transparent)",
+                "linear-gradient(to bottom, transparent, #4A9EBF 4%, #4A9EBF 96%, transparent)",
             }}
           />
 
-          <div className="flex flex-col gap-12">
-            {EXPERIENCE.map((job, i) => (
-              <ScrollReveal key={job.company + job.dates} delay={i * 80}>
-                <div className="flex gap-8">
+          <div className="flex flex-col gap-20 md:gap-24">
+            {EXPERIENCE.map((job, i) => {
+              const isLeft = i % 2 === 0;
+              return (
+                <ScrollReveal key={job.company + job.dates} delay={i * 60}>
+                  <div className="relative md:grid md:grid-cols-[1fr_auto_1fr] md:gap-10 items-start">
 
-                  {/* Timeline dot */}
-                  <div className="flex-shrink-0 flex flex-col items-center" style={{ width: "1.75rem" }}>
-                    <span
-                      className="mt-1 w-3.5 h-3.5 rounded-full bg-surface border-2 border-purple animate-glow-pulse flex-shrink-0"
-                      style={{ animationDelay: `${i * 0.2}s` }}
-                    />
-                  </div>
-
-                  {/* Card */}
-                  <div className="neon-card scanline-card bg-surface rounded-sm p-5 flex-1 min-w-0">
-
-                    {/* Header row */}
-                    <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
-                      <div>
-                        <span className="text-teal text-xs font-mono">[</span>
-                        <span className="text-purple font-bold text-sm font-mono">
-                          {job.company}
-                        </span>
-                        <span className="text-teal text-xs font-mono">]</span>
-                        <h3 className="text-white font-bold text-base mt-1">
-                          {job.role}
-                        </h3>
-                      </div>
-                      <div className="text-right flex-shrink-0">
-                        <p className="text-teal text-xs font-mono">{job.dates}</p>
-                        <p className="text-muted text-xs font-mono mt-0.5">
-                          {job.location}
-                        </p>
-                      </div>
+                    {/* Left content area */}
+                    <div className={`${isLeft ? "md:text-right" : "md:order-3"}`}>
+                      {isLeft && (
+                        <EntryContent job={job} align="right" />
+                      )}
+                      {!isLeft && <div className="hidden md:block" />}
                     </div>
 
-                    {/* Divider */}
-                    <div className="border-t border-purple/15 mb-3" />
+                    {/* Center dot */}
+                    <div className="hidden md:flex items-start justify-center pt-2">
+                      <span className="w-3 h-3 rounded-full bg-purple flex-shrink-0" />
+                    </div>
 
-                    {/* Bullets */}
-                    <ul className="flex flex-col gap-2">
-                      {job.bullets.map((b, j) => (
-                        <li key={j} className="flex items-start gap-2 text-base text-muted leading-relaxed">
-                          <span className="text-purple mt-0.5 flex-shrink-0">▸</span>
-                          <span>{b}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    {/* Right content area */}
+                    <div className={`${isLeft ? "md:order-3" : ""}`}>
+                      {!isLeft && (
+                        <EntryContent job={job} align="left" />
+                      )}
+                      {isLeft && <div className="hidden md:block" />}
+                    </div>
+
+                    {/* Mobile-only: no grid, just render content */}
+                    <div className="md:hidden">
+                      <EntryContent job={job} align="left" />
+                    </div>
+
                   </div>
-
-                </div>
-              </ScrollReveal>
-            ))}
+                </ScrollReveal>
+              );
+            })}
           </div>
 
         </div>
       </div>
     </section>
+  );
+}
+
+function EntryContent({
+  job,
+  align,
+}: {
+  job: (typeof EXPERIENCE)[number];
+  align: "left" | "right";
+}) {
+  const textAlign = align === "right" ? "md:text-right" : "";
+  const bulletAlign = align === "right" ? "md:justify-end" : "";
+
+  return (
+    <div className={textAlign}>
+      <h3 className="text-teal text-2xl font-bold mb-1">
+        {job.company}
+      </h3>
+      <p className="text-white text-lg font-medium mb-2">
+        {job.role}
+      </p>
+      <p className="text-muted text-sm font-mono mb-5">
+        {job.dates} · {job.location}
+      </p>
+      <ul className="flex flex-col gap-2.5">
+        {job.bullets.map((b, j) => (
+          <li
+            key={j}
+            className={`flex items-start gap-2.5 text-base leading-relaxed ${bulletAlign}`}
+          >
+            <span className="text-teal mt-1 flex-shrink-0 text-sm">▸</span>
+            <span className="text-muted">{b}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
