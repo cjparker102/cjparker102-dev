@@ -36,12 +36,7 @@ export default function Skills() {
           {SKILLS.map((row, i) => (
             <ScrollReveal key={row.label} delay={i * 80}>
               <div
-                className={`
-                  flex flex-col md:flex-row md:items-baseline gap-4 md:gap-0
-                  py-6 px-4 -mx-4 rounded-sm
-                  transition-colors duration-200 hover:bg-purple/[0.06]
-                  border-b border-white/[0.06]
-                `}
+                className="flex flex-col md:flex-row md:items-baseline gap-4 md:gap-0 py-6 px-4 -mx-4 rounded-sm transition-colors duration-200 hover:bg-purple/[0.06]"
               >
                 <p
                   className="text-teal text-base font-bold font-mono uppercase tracking-widest md:w-52 md:min-w-[13rem] shrink-0"
@@ -55,6 +50,7 @@ export default function Skills() {
                   {row.items}
                 </p>
               </div>
+              <div className="h-px" style={{ background: "rgba(255,255,255,0.06)" }} />
             </ScrollReveal>
           ))}
         </div>
