@@ -71,12 +71,7 @@ export default function Projects() {
             return (
               <ScrollReveal key={project.name} delay={i * 90}>
                 <div
-                  className="rounded-sm p-6 h-full flex flex-col gap-4 transition-colors duration-200"
-                  style={{
-                    border: "1px solid rgba(255,255,255,0.08)",
-                  }}
-                  onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#4A9EBF"; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; }}
+                  className="project-card rounded-sm p-6 h-full flex flex-col gap-4"
                 >
 
                   {/* Header — name + status */}
