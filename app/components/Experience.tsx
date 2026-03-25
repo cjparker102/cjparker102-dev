@@ -91,7 +91,7 @@ export default function Experience() {
             }}
           />
 
-          <div className="flex flex-col gap-4 md:gap-5">
+          <div className="flex flex-col gap-3 md:gap-4">
             {EXPERIENCE.map((job, i) => {
               const onRight = i % 2 === 1;
               return (
@@ -101,7 +101,7 @@ export default function Experience() {
                     {/* Left half */}
                     <div className={`md:w-1/2 ${onRight ? "hidden md:block md:pr-10" : "md:pr-10"}`}>
                       {!onRight && (
-                        <div className="md:text-right">
+                        <div style={{ textAlign: "right" }}>
                           <h3 className="text-teal text-2xl font-bold mb-1">{job.company}</h3>
                           <p className="text-white text-lg font-medium mb-1">{job.role}</p>
                           <p className="text-muted text-sm font-mono mb-3">{job.dates} · {job.location}</p>
