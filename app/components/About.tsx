@@ -72,49 +72,64 @@ export default function About() {
 
           {/* ── Right: Status card ─────────────────────────────── */}
           <ScrollReveal delay={300}>
-            <div className="neon-card bg-surface rounded-sm p-6 h-full">
+            <div
+              className="rounded-[10px] overflow-hidden h-full flex flex-col"
+              style={{ boxShadow: "0 8px 30px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.3)" }}
+            >
 
-              {/* Terminal title bar */}
-              <div className="flex items-center gap-2 mb-5 pb-3 border-b border-purple/20">
-                <span className="w-3 h-3 rounded-full bg-red-500/70" />
-                <span className="w-3 h-3 rounded-full bg-yellow-500/70" />
-                <span className="w-3 h-3 rounded-full bg-green-500/70" />
-                <span className="ml-2 text-muted text-xs font-mono">
-                  status.txt
+              {/* ── macOS title bar ─────────────────────────── */}
+              <div
+                className="flex items-center px-4 py-3"
+                style={{ background: "#2d2d2d" }}
+              >
+                <div className="flex items-center gap-2">
+                  <span className="w-3 h-3 rounded-full" style={{ background: "#FF5F57" }} />
+                  <span className="w-3 h-3 rounded-full" style={{ background: "#FFBD2E" }} />
+                  <span className="w-3 h-3 rounded-full" style={{ background: "#28C840" }} />
+                </div>
+                <span className="flex-1 text-center text-muted/60 text-xs font-mono -ml-[52px]">
+                  christopher@cjparker102 — zsh
                 </span>
               </div>
 
-              {/* Command line */}
-              <p className="text-base font-mono mb-4">
-                <span className="text-teal">$ </span>
-                <span className="text-purple">cat</span>
-                <span className="text-white"> status.txt</span>
-              </p>
+              {/* ── Terminal body ────────────────────────────── */}
+              <div
+                className="flex-1 px-5 py-5 font-mono flex flex-col"
+                style={{ background: "#1a1a1a" }}
+              >
 
-              {/* Status lines */}
-              <div className="flex flex-col gap-3">
-                {STATUS_LINES.map(({ key, text }) => (
-                  <div key={key} className="flex items-start gap-3 text-base font-mono">
-                    <span className="text-purple mt-0.5">→</span>
-                    <span className="text-white leading-relaxed">{text}</span>
-                  </div>
-                ))}
+                {/* Command line */}
+                <p className="text-base mb-4">
+                  <span className="text-teal">$ </span>
+                  <span className="text-purple">cat</span>
+                  <span className="text-white"> status.txt</span>
+                </p>
+
+                {/* Status lines */}
+                <div className="flex flex-col gap-3">
+                  {STATUS_LINES.map(({ key, text }) => (
+                    <div key={key} className="flex items-start gap-3 text-base">
+                      <span className="text-purple mt-0.5">→</span>
+                      <span className="text-white leading-relaxed">{text}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Currently active badge */}
+                <div className="mt-6 pt-4 border-t border-white/10 flex items-center gap-3">
+                  <span
+                    className="inline-block w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse-dot flex-shrink-0"
+                  />
+                  <span className="text-xs text-muted">
+                    status:{" "}
+                    <span className="text-green-400">currently active</span>
+                  </span>
+                </div>
+
+                {/* Blinking cursor */}
+                <p className="mt-3 text-sm text-muted cursor-blink" />
               </div>
 
-              {/* Currently active badge */}
-              <div className="mt-6 pt-4 border-t border-purple/20 flex items-center gap-3">
-                {/* Pulsing green dot */}
-                <span
-                  className="inline-block w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse-dot flex-shrink-0"
-                />
-                <span className="text-xs font-mono text-muted">
-                  status:{" "}
-                  <span className="text-green-400">currently active</span>
-                </span>
-              </div>
-
-              {/* Blinking cursor */}
-              <p className="mt-3 text-sm font-mono text-muted cursor-blink" />
             </div>
           </ScrollReveal>
 
