@@ -40,7 +40,7 @@ export default function Navbar() {
             <li key={href}>
               <a
                 href={href}
-                className="nav-link text-muted text-sm"
+                className="nav-link text-muted text-sm uppercase tracking-wider"
               >
                 {label}
               </a>
