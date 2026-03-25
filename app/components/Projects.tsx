@@ -5,7 +5,7 @@ const PROJECTS = [
     name: "okta-access-reviewer",
     status: "ACTIVE" as const,
     description:
-      "AI-powered tool that analyzes Okta access patterns, flags inactive users, over-provisioned accounts, and anomalies.",
+      "AI-powered Okta access pattern analyzer — flags inactive users, over-provisioned accounts, and anomalies.",
     stack: ["Python", "Okta SDK", "Claude API"],
     github: "https://github.com/cjparker102/okta-access-reviewer",
   },
@@ -13,16 +13,16 @@ const PROJECTS = [
     name: "it-command-dashboard",
     status: "INTERNAL" as const,
     description:
-      "AI-powered IT operations dashboard with JIRA, Confluence, and OpsGenie integrations. AI ticket creation, response generation, and similar ticket search.",
+      "AI-powered IT ops dashboard with JIRA, Confluence, and OpsGenie integrations.",
     stack: ["Python", "Node.js", "HTML/CSS/JS", "Claude API"],
     github: null,
-    note: "Internal project — no public link",
+    note: "Internal — no public link",
   },
   {
     name: "okta-chaos-generator",
     status: "PUBLIC" as const,
     description:
-      "Creates 100–200 randomized Okta users with hidden IAM security issues for CTF-style access review practice. Pairs with okta-access-reviewer as a complete attack/defense training ecosystem.",
+      "Generates 100–200 randomized Okta users with hidden IAM issues for CTF-style practice.",
     stack: ["Python", "Okta SDK"],
     github: "https://github.com/cjparker102/okta-chaos-generator",
   },
@@ -44,11 +44,11 @@ const PROJECTS = [
   },
 ] as const;
 
-const STATUS_STYLE: Record<string, { className: string; dot?: boolean }> = {
-  ACTIVE:        { className: "text-green-300", dot: true },
-  PUBLIC:        { className: "text-purple brightness-125" },
-  INTERNAL:      { className: "text-teal brightness-125" },
-  "COMING SOON": { className: "text-muted" },
+const STATUS_CFG: Record<string, { color: string; border: string; dot?: boolean }> = {
+  ACTIVE:        { color: "text-green-300", border: "#4A9EBF", dot: true },
+  PUBLIC:        { color: "text-purple",    border: "#4A9EBF" },
+  INTERNAL:      { color: "text-teal",      border: "#E8A83E" },
+  "COMING SOON": { color: "text-muted",     border: "rgba(139,155,173,0.3)" },
 };
 
 export default function Projects() {
@@ -64,64 +64,59 @@ export default function Projects() {
           </h2>
         </ScrollReveal>
 
-        {/* Card grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="flex flex-col">
           {PROJECTS.map((project, i) => {
-            const status = STATUS_STYLE[project.status];
+            const cfg = STATUS_CFG[project.status];
             return (
-              <ScrollReveal key={project.name} delay={i * 90}>
+              <ScrollReveal key={project.name} delay={i * 80}>
                 <div
-                  className="project-card rounded-sm p-6 h-full flex flex-col gap-4"
+                  className={`
+                    pl-6 py-6
+                    ${i < PROJECTS.length - 1 ? "border-b border-white/8" : ""}
+                  `}
+                  style={{ borderLeft: `3px solid ${cfg.border}` }}
                 >
 
-                  {/* Header — name + status */}
-                  <div className="flex items-start justify-between gap-3">
-                    <p className="text-white font-bold text-sm font-mono leading-snug">
+                  {/* Name + status */}
+                  <div className="flex items-center gap-3 mb-2">
+                    <p className="text-white font-bold font-mono text-base">
                       {project.name}
                     </p>
                     <span
-                      className={`
-                        ${status.className}
-                        flex-shrink-0 flex items-center gap-1.5
-                        text-[11px] font-mono tracking-wider whitespace-nowrap
-                      `}
+                      className={`${cfg.color} flex items-center gap-1.5 text-[11px] font-mono tracking-wider`}
                     >
-                      {status.dot && (
+                      {cfg.dot && (
                         <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse-dot flex-shrink-0" />
                       )}
                       {project.status}
                     </span>
                   </div>
 
-                  {/* Divider */}
-                  <div className="border-t border-white/8" />
-
                   {/* Description */}
-                  <p className="text-muted text-sm leading-relaxed flex-1">
+                  <p className="text-muted text-sm leading-relaxed mb-2">
                     {project.description}
                   </p>
 
-                  {/* Stack — plain text with dots */}
-                  <p className="text-white/50 text-xs font-mono">
-                    {project.stack.join(" · ")}
-                  </p>
-
-                  {/* Footer */}
-                  <div className="border-t border-white/8 pt-3">
+                  {/* Stack + link */}
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+                    <p className="text-white/40 text-xs font-mono">
+                      {project.stack.join(" · ")}
+                    </p>
                     {project.github ? (
                       <a
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-purple text-xs font-mono transition-colors duration-200 hover:text-white flex items-center gap-1.5"
+                        className="text-purple text-xs font-mono transition-colors duration-200 hover:text-white"
                       >
-                        <span className="opacity-60">▸</span>
-                        github.com/cjparker102/{project.name}
+                        ▸ github.com/cjparker102/{project.name}
                       </a>
                     ) : (
-                      <p className="text-muted/40 text-xs font-mono italic">
-                        {"note" in project ? project.note : "// coming soon"}
-                      </p>
+                      "note" in project && (
+                        <p className="text-muted/30 text-xs font-mono italic">
+                          {project.note}
+                        </p>
+                      )
                     )}
                   </div>
 
