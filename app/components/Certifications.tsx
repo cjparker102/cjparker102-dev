@@ -1,80 +1,17 @@
 import ScrollReveal from "./ScrollReveal";
 
 const CERTS = [
-  {
-    name: "Okta Certified Professional",
-    issuer: "Okta",
-    date: "Dec 2025",
-    accent: "teal" as const,
-  },
-  {
-    name: "CompTIA Security+",
-    issuer: "CompTIA",
-    date: null,
-    accent: "purple" as const,
-  },
-  {
-    name: "CompTIA Network+",
-    issuer: "CompTIA",
-    date: null,
-    accent: "purple" as const,
-  },
-  {
-    name: "CompTIA A+",
-    issuer: "CompTIA",
-    date: null,
-    accent: "purple" as const,
-  },
-  {
-    name: "Secure Infrastructure Specialist",
-    issuer: "CompTIA",
-    date: null,
-    accent: "purple" as const,
-  },
-  {
-    name: "Certified Encryption Specialist",
-    issuer: "EC-Council",
-    date: null,
-    accent: "teal" as const,
-  },
-  {
-    name: "Web Security Specialist",
-    issuer: "CIW",
-    date: null,
-    accent: "teal" as const,
-  },
-  {
-    name: "Lean Six Sigma Black Belt",
-    issuer: "Educate 360",
-    date: "Feb 2025",
-    accent: "purple" as const,
-  },
-  {
-    name: "Linux Essentials",
-    issuer: "LPI",
-    date: null,
-    accent: "teal" as const,
-  },
-] as const;
-
-const ACCENT = {
-  purple: {
-    card:   "neon-card",
-    label:  "text-purple",
-    badge:  "border border-purple/30 text-purple/80 bg-purple/5",
-    rule:   "border-purple/15",
-  },
-  teal: {
-    card:   "neon-card-teal",
-    label:  "text-teal",
-    badge:  "border border-teal/30 text-teal/80 bg-teal/5",
-    rule:   "border-teal/15",
-  },
-};
+  { issuer: "Okta",        certs: "Okta Certified Professional" },
+  { issuer: "CompTIA",     certs: "Security+ · Network+ · A+ · Secure Infrastructure Specialist" },
+  { issuer: "EC-Council",  certs: "Certified Encryption Specialist" },
+  { issuer: "CIW",         certs: "Web Security Specialist" },
+  { issuer: "Educate 360", certs: "Lean Six Sigma Black Belt" },
+  { issuer: "LPI",         certs: "Linux Essentials" },
+];
 
 export default function Certifications() {
   return (
-    <section id="certifications" className="relative py-28 px-6">
+    <section id="certifications" className="relative py-20 px-6">
       <div className="max-w-5xl mx-auto">
 
         {/* Section header */}
@@ -85,53 +22,26 @@ export default function Certifications() {
           </h2>
         </ScrollReveal>
 
-        {/* 3-col on lg, 2-col on md, 1-col on mobile */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {CERTS.map((cert, i) => {
-            const a = ACCENT[cert.accent];
-            return (
-              <ScrollReveal key={cert.name} delay={i * 70}>
-                <div
-                  className={`
-                    ${a.card} scanline-card
-                    bg-surface rounded-sm p-5 h-full
-                    flex flex-col gap-3
-                  `}
-                >
-                  {/* Issuer badge + date */}
-                  <div className="flex items-center justify-between gap-2">
-                    <span
-                      className={`
-                        ${a.badge}
-                        text-[10px] font-mono tracking-wider
-                        px-2 py-0.5 rounded-sm
-                      `}
-                    >
-                      {cert.issuer}
-                    </span>
-                    {cert.date && (
-                      <span className="text-muted/60 text-[10px] font-mono">
-                        {cert.date}
-                      </span>
-                    )}
-                  </div>
+        <div className="flex flex-col">
+          {CERTS.map((row, i) => (
+            <ScrollReveal key={row.issuer} delay={i * 80}>
+              <div className="flex flex-col md:flex-row md:items-baseline gap-4 md:gap-0 py-6 px-4 -mx-4 rounded-sm transition-colors duration-200 hover:bg-purple/[0.06]">
+                <p className="text-teal text-base font-bold font-mono uppercase tracking-widest md:w-52 md:min-w-[13rem] shrink-0">
+                  {row.issuer}
+                </p>
 
-                  {/* Divider */}
-                  <div className={`border-t ${a.rule}`} />
+                <div className="hidden md:block w-0.5 self-stretch mx-8" style={{ background: "#4A9EBF" }} />
 
-                  {/* Cert name */}
-                  <p className="text-white text-sm font-bold font-mono leading-snug flex-1">
-                    {cert.name}
-                  </p>
-
-                  {/* Footer tick */}
-                  <p className={`${a.label} text-[10px] font-mono tracking-widest`}>
-                    ✓ CERTIFIED
-                  </p>
-                </div>
-              </ScrollReveal>
-            );
-          })}
+                <p className="text-white font-mono text-base leading-loose">
+                  {row.certs} <span className="text-purple">✓</span>
+                </p>
+              </div>
+              <div
+                className="h-px"
+                style={{ background: "linear-gradient(to right, transparent, rgba(255,255,255,0.15) 20%, rgba(255,255,255,0.15) 80%, transparent)" }}
+              />
+            </ScrollReveal>
+          ))}
         </div>
 
       </div>
