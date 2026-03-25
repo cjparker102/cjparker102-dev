@@ -8,7 +8,6 @@ const PROJECTS = [
       "AI-powered tool that analyzes Okta access patterns, flags inactive users, over-provisioned accounts, and anomalies.",
     stack: ["Python", "Okta SDK", "Claude API"],
     github: "https://github.com/cjparker102/okta-access-reviewer",
-    accent: "purple" as const,
   },
   {
     name: "it-command-dashboard",
@@ -18,7 +17,6 @@ const PROJECTS = [
     stack: ["Python", "Node.js", "HTML/CSS/JS", "Claude API"],
     github: null,
     note: "Internal project — no public link",
-    accent: "teal" as const,
   },
   {
     name: "okta-chaos-generator",
@@ -27,7 +25,6 @@ const PROJECTS = [
       "Creates 100–200 randomized Okta users with hidden IAM security issues for CTF-style access review practice. Pairs with okta-access-reviewer as a complete attack/defense training ecosystem.",
     stack: ["Python", "Okta SDK"],
     github: "https://github.com/cjparker102/okta-chaos-generator",
-    accent: "purple" as const,
   },
   {
     name: "iam-offboarding-assistant",
@@ -36,7 +33,6 @@ const PROJECTS = [
       "Intelligent offboarding automation with AI-generated deprovisioning checklists.",
     stack: ["Python", "Okta", "AWS IAM"],
     github: null,
-    accent: "teal" as const,
   },
   {
     name: "okta-policy-explainer",
@@ -45,32 +41,14 @@ const PROJECTS = [
       "Paste any Okta policy → AI explains it in plain English.",
     stack: ["Python", "Claude API"],
     github: null,
-    accent: "purple" as const,
   },
 ] as const;
 
-// Badge styles per status
-const BADGE: Record<string, string> = {
-  ACTIVE:        "text-green-400  border-green-400/40  bg-green-400/10",
-  PUBLIC:        "text-teal       border-teal/40        bg-teal/10",
-  INTERNAL:      "text-amber-400  border-amber-400/40   bg-amber-400/10",
-  "COMING SOON": "text-muted      border-white/15       bg-white/5",
-};
-
-// Neon card + stack badge classes per accent
-const ACCENT = {
-  purple: {
-    card:  "neon-card",
-    tag:   "border border-purple/30 text-muted hover:border-purple hover:text-white",
-    link:  "text-purple hover:text-white",
-    rule:  "border-purple/15",
-  },
-  teal: {
-    card:  "neon-card-teal",
-    tag:   "border border-teal/30  text-muted hover:border-teal  hover:text-white",
-    link:  "text-teal   hover:text-white",
-    rule:  "border-teal/15",
-  },
+const STATUS_STYLE: Record<string, { className: string; dot?: boolean }> = {
+  ACTIVE:        { className: "text-green-400", dot: true },
+  PUBLIC:        { className: "text-purple" },
+  INTERNAL:      { className: "text-teal" },
+  "COMING SOON": { className: "text-muted" },
 };
 
 export default function Projects() {
@@ -86,35 +64,34 @@ export default function Projects() {
           </h2>
         </ScrollReveal>
 
-        {/* Card grid — 3 cols on lg, 2 on md, 1 on mobile */}
+        {/* Card grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {PROJECTS.map((project, i) => {
-            const a = ACCENT[project.accent];
+            const status = STATUS_STYLE[project.status];
             return (
               <ScrollReveal key={project.name} delay={i * 90}>
                 <div
-                  className={`
-                    ${a.card} scanline-card
-                    bg-surface rounded-sm p-6 h-full
-                    flex flex-col gap-4
-                  `}
+                  className="rounded-sm p-6 h-full flex flex-col gap-4 transition-colors duration-200"
+                  style={{
+                    border: "1px solid rgba(255,255,255,0.08)",
+                  }}
+                  onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#4A9EBF"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; }}
                 >
 
-                  {/* Header — name + status badge */}
+                  {/* Header — name + status */}
                   <div className="flex items-start justify-between gap-3">
                     <p className="text-white font-bold text-sm font-mono leading-snug">
                       {project.name}
                     </p>
-
                     <span
                       className={`
-                        ${BADGE[project.status]}
+                        ${status.className}
                         flex-shrink-0 flex items-center gap-1.5
-                        border text-[10px] font-mono tracking-wider
-                        px-2 py-0.5 rounded-sm whitespace-nowrap
+                        text-[11px] font-mono tracking-wider whitespace-nowrap
                       `}
                     >
-                      {project.status === "ACTIVE" && (
+                      {status.dot && (
                         <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse-dot flex-shrink-0" />
                       )}
                       {project.status}
@@ -122,50 +99,32 @@ export default function Projects() {
                   </div>
 
                   {/* Divider */}
-                  <div className={`border-t ${a.rule}`} />
+                  <div className="border-t border-white/8" />
 
                   {/* Description */}
                   <p className="text-muted text-sm leading-relaxed flex-1">
                     {project.description}
                   </p>
 
-                  {/* Stack tags */}
-                  <div className="flex flex-wrap gap-1.5">
-                    {project.stack.map((tag) => (
-                      <span
-                        key={tag}
-                        className={`
-                          ${a.tag}
-                          bg-bg px-2.5 py-0.5 text-[10px] font-mono rounded-sm
-                          transition-all duration-200 cursor-default select-none
-                        `}
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                  {/* Stack — plain text with dots */}
+                  <p className="text-muted/60 text-xs font-mono">
+                    {project.stack.join(" · ")}
+                  </p>
 
-                  {/* Footer — GitHub link or internal note */}
-                  <div className={`border-t ${a.rule} pt-3`}>
+                  {/* Footer */}
+                  <div className="border-t border-white/8 pt-3">
                     {project.github ? (
                       <a
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`
-                          ${a.link}
-                          text-xs font-mono
-                          transition-colors duration-200
-                          flex items-center gap-1.5
-                        `}
+                        className="text-purple text-xs font-mono transition-colors duration-200 hover:text-white flex items-center gap-1.5"
                       >
                         <span className="opacity-60">▸</span>
-                        <span>
-                          github.com/cjparker102/{project.name}
-                        </span>
+                        github.com/cjparker102/{project.name}
                       </a>
                     ) : (
-                      <p className="text-muted/50 text-[10px] font-mono italic">
+                      <p className="text-muted/40 text-xs font-mono italic">
                         {"note" in project ? project.note : "// coming soon"}
                       </p>
                     )}
