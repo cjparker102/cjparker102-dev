@@ -92,12 +92,7 @@ body {
 }
 
 /* ─── Grid background ────────────────────────────────────────── */
-.grid-bg {
-  background-image:
-    linear-gradient(rgba(74,158,191,0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(74,158,191,0.06) 1px, transparent 1px);
-  background-size: 40px 40px;
-}
+.grid-bg {}
 
 /* ─── Neon card borders ──────────────────────────────────────── */
 .neon-card {
