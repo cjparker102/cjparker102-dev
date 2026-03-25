@@ -78,7 +78,7 @@ export default function Hero() {
 
         {/* Name */}
         <h1
-          className="text-7xl sm:text-8xl font-bold tracking-tight leading-none mb-4 animate-fade-in-up text-white"
+          className="text-7xl sm:text-8xl lg:text-9xl font-black tracking-tight leading-none mb-4 animate-fade-in-up text-white"
           style={{ animationDelay: "0.25s" }}
         >
           CJ<span className="text-purple"> PARKER</span>
@@ -104,7 +104,7 @@ export default function Hero() {
 
         {/* Tagline */}
         <p
-          className="text-muted font-mono text-sm max-w-xl leading-relaxed mb-10 animate-fade-in-up"
+          className="text-muted font-mono text-base max-w-xl leading-relaxed mb-10 animate-fade-in-up"
           style={{ animationDelay: "0.65s" }}
         >
           <span className="text-teal">$ </span>

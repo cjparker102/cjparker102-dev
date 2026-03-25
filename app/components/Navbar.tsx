@@ -33,11 +33,11 @@ export default function Navbar() {
         {/* Logo */}
         <a
           href="#hero"
-          className="font-mono text-lg font-bold tracking-widest select-none"
+          className="font-mono text-sm font-bold tracking-widest select-none"
         >
-          <span className="text-teal">[</span>
-          <span className="text-purple">CJP</span>
-          <span className="text-teal">]</span>
+          <span className="text-purple">{`{`}</span>
+          <span className="text-white">CJPARKER102.DEV</span>
+          <span className="text-teal">{`}`}</span>
         </a>
 
         {/* Desktop links */}
