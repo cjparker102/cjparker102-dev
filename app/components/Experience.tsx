@@ -12,7 +12,7 @@ const EXPERIENCE = [
     ],
   },
   {
-    company:   "U.S. Small Business Administration",
+    company:   "U.S. SBA",
     role:      "IT Support Intern",
     dates:     "2024",
     location:  "Washington, DC",
@@ -98,7 +98,7 @@ export default function Experience() {
             }}
           />
 
-          <div className="flex flex-col gap-20 md:gap-24">
+          <div className="flex flex-col gap-10 md:gap-12">
             {EXPERIENCE.map((job, i) => {
               const onRight = i % 2 === 1;
               return (
@@ -106,10 +106,10 @@ export default function Experience() {
                   <div className="relative">
 
                     {/* Dot — pinned to center spine */}
-                    <span className="hidden md:block absolute left-1/2 -translate-x-1/2 top-2 w-3 h-3 rounded-full bg-purple" />
+                    <span className="hidden md:block absolute left-1/2 -translate-x-1/2 top-2 w-3 h-3 rounded-full bg-teal" />
 
                     {/* Content — 46% wide, alternating sides, 4% gap to spine */}
-                    <div className={`md:w-[46%] ${onRight ? "md:ml-[54%]" : ""}`}>
+                    <div className={`md:w-[47%] ${onRight ? "md:ml-[53%]" : ""}`}>
                       <h3 className={`text-teal text-2xl font-bold mb-1 ${onRight ? "" : "md:text-right"}`}>
                         {job.company}
                       </h3>
