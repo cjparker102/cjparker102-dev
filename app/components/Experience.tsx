@@ -98,7 +98,7 @@ export default function Experience() {
             }}
           />
 
-          <div className="flex flex-col gap-6 md:gap-8">
+          <div className="flex flex-col gap-4 md:gap-5">
             {EXPERIENCE.map((job, i) => {
               const onRight = i % 2 === 1;
               return (
@@ -108,12 +108,12 @@ export default function Experience() {
                     {/* Left half */}
                     <div className={`md:w-1/2 ${onRight ? "hidden md:block md:pr-10" : "md:pr-10"}`}>
                       {!onRight && (
-                        <div className="md:text-right">
-                          <h3 className="text-teal text-2xl font-bold mb-1">{job.company}</h3>
-                          <p className="text-white text-lg font-medium mb-1">{job.role}</p>
-                          <p className="text-muted text-sm font-mono mb-3">{job.dates} · {job.location}</p>
+                        <div>
+                          <h3 className="text-teal text-2xl font-bold mb-1 md:text-right">{job.company}</h3>
+                          <p className="text-white text-lg font-medium mb-1 md:text-right">{job.role}</p>
+                          <p className="text-muted text-sm font-mono mb-3 md:text-right">{job.dates} · {job.location}</p>
                           {job.bullets.map((b, j) => (
-                            <p key={j} className="text-muted text-sm leading-relaxed mb-1">{b}</p>
+                            <p key={j} className="text-muted text-base leading-relaxed mb-1 md:text-right">{b}</p>
                           ))}
                         </div>
                       )}
@@ -130,7 +130,7 @@ export default function Experience() {
                           <p className="text-white text-lg font-medium mb-1">{job.role}</p>
                           <p className="text-muted text-sm font-mono mb-3">{job.dates} · {job.location}</p>
                           {job.bullets.map((b, j) => (
-                            <p key={j} className="text-muted text-sm leading-relaxed mb-1">{b}</p>
+                            <p key={j} className="text-muted text-base leading-relaxed mb-1">{b}</p>
                           ))}
                         </div>
                       )}
@@ -142,7 +142,7 @@ export default function Experience() {
                       <p className="text-white text-lg font-medium mb-1">{job.role}</p>
                       <p className="text-muted text-sm font-mono mb-3">{job.dates} · {job.location}</p>
                       {job.bullets.map((b, j) => (
-                        <p key={j} className="text-muted text-sm leading-relaxed mb-1">{b}</p>
+                        <p key={j} className="text-muted text-base leading-relaxed mb-1">{b}</p>
                       ))}
                     </div>
 
