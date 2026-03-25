@@ -21,7 +21,7 @@ const SKILLS = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative py-28 px-6">
+    <section id="skills" className="relative py-20 px-6">
       <div className="max-w-5xl mx-auto">
 
         {/* Section header */}
@@ -38,19 +38,20 @@ export default function Skills() {
               <div
                 className={`
                   flex flex-col md:flex-row md:items-baseline gap-4 md:gap-0
-                  py-6
+                  py-6 px-4 -mx-4 rounded-sm
+                  transition-colors duration-200 hover:bg-purple/[0.06]
                   ${i < SKILLS.length - 1 ? "border-b border-white/8" : ""}
                 `}
               >
                 <p
-                  className="text-teal text-sm font-mono uppercase tracking-widest md:w-52 md:min-w-[13rem] shrink-0"
+                  className="text-teal text-base font-bold font-mono uppercase tracking-widest md:w-52 md:min-w-[13rem] shrink-0"
                 >
                   {row.label}
                 </p>
 
-                <div className="hidden md:block w-px self-stretch bg-white/10 mx-8" />
+                <div className="hidden md:block w-0.5 self-stretch mx-8" style={{ background: "#4A9EBF" }} />
 
-                <p className="text-white font-mono text-base leading-relaxed">
+                <p className="text-white font-mono text-base leading-loose">
                   {row.items}
                 </p>
               </div>
