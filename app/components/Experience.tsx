@@ -7,7 +7,7 @@ const EXPERIENCE = [
     dates:     "2025 – Present",
     location:  "McLean, VA",
     bullets: [
-      "Okta administration, JAMF fleet management for 500+ users, and AI dashboard pending deployment.",
+      "Okta administration and JAMF fleet management for 500+ users. Built AI-powered IT dashboard pending department deployment.",
     ],
   },
   {
@@ -16,7 +16,7 @@ const EXPERIENCE = [
     dates:     "2024",
     location:  "Washington, DC",
     bullets: [
-      "Automated FOIA request processing using Python and Microsoft Purview APIs — reducing processing time by 70% across 500+ monthly requests. Trained 10 team members on Power Automate and SharePoint, cutting onboarding time to 5 days.",
+      "Automated FOIA processing with Python — cutting time by 70% across 500+ monthly requests. Trained 10 team members on Power Automate.",
     ],
   },
   {
@@ -25,7 +25,7 @@ const EXPERIENCE = [
     dates:     "2018 – 2021",
     location:  "Austin, TX",
     bullets: [
-      "Python automation saving resolution time 60%. Managed Apple TV+ metadata pipelines with zero errors.",
+      "Managed Apple TV+ metadata pipelines with zero delivery errors. Python automation saved resolution time by 60%.",
     ],
   },
   {
@@ -34,7 +34,7 @@ const EXPERIENCE = [
     dates:     "2018",
     location:  "Mountain View, CA",
     bullets: [
-      "Managed Active Directory for 60,000+ employees across US and Shanghai offices. Created Bash automation scripts cutting system maintenance time by 40%.",
+      "Managed Active Directory for 60,000+ employees across US and Shanghai. Bash scripts cut maintenance time by 40%.",
     ],
   },
   {
@@ -52,7 +52,7 @@ const EXPERIENCE = [
     dates:     "2017",
     location:  "Denver, CO",
     bullets: [
-      "Diagnosed and repaired hardware and software failures across consumer and small-business devices.",
+      "Diagnosed hardware and software failures across consumer and small-business devices.",
     ],
   },
   {
@@ -61,7 +61,7 @@ const EXPERIENCE = [
     dates:     "2013 – 2017",
     location:  "Breinigsville, PA",
     bullets: [
-      "Inventory control and QA in high-volume fulfillment center.",
+      "Inventory control and QA in a high-volume fulfillment center.",
     ],
   },
 ];
