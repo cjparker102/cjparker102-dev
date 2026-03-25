@@ -91,7 +91,7 @@ export default function Hero() {
 
         {/* Typewriter role */}
         <div
-          className="flex items-center gap-1.5 text-2xl sm:text-3xl lg:text-4xl font-bold font-mono mb-8 animate-fade-in-up"
+          className="flex items-center gap-1.5 text-2xl sm:text-3xl lg:text-4xl font-light font-mono mb-8 animate-fade-in-up"
           style={{ animationDelay: "0.45s" }}
         >
           <span className="text-teal">[</span>
