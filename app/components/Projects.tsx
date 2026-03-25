@@ -45,9 +45,9 @@ const PROJECTS = [
 ] as const;
 
 const STATUS_STYLE: Record<string, { className: string; dot?: boolean }> = {
-  ACTIVE:        { className: "text-green-400", dot: true },
-  PUBLIC:        { className: "text-purple" },
-  INTERNAL:      { className: "text-teal" },
+  ACTIVE:        { className: "text-green-300", dot: true },
+  PUBLIC:        { className: "text-purple brightness-125" },
+  INTERNAL:      { className: "text-teal brightness-125" },
   "COMING SOON": { className: "text-muted" },
 };
 
@@ -102,7 +102,7 @@ export default function Projects() {
                   </p>
 
                   {/* Stack — plain text with dots */}
-                  <p className="text-muted/60 text-xs font-mono">
+                  <p className="text-white/50 text-xs font-mono">
                     {project.stack.join(" · ")}
                   </p>
 
