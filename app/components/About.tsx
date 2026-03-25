@@ -83,7 +83,7 @@ export default function About() {
                   <span className="w-3 h-3 rounded-full" style={{ background: "#28C840" }} />
                 </div>
                 <span className="flex-1 text-center text-muted/60 text-xs font-mono -ml-[52px]">
-                  christopher@cjparker102 — zsh
+                  okta-access-reviewer — python3
                 </span>
               </div>
 
@@ -93,66 +93,52 @@ export default function About() {
                 style={{ background: "#1a1a1a" }}
               >
 
-                {/* whoami */}
+                {/* Command */}
+                <p>
+                  <span className="text-green-400">christopher@cjparker102</span>
+                  <span className="text-muted"> ~/projects/okta-access-reviewer % </span>
+                  <span className="text-white">python3 main.py</span>
+                </p>
+
+                {/* Init checks */}
                 <div>
-                  <p>
-                    <span className="text-green-400">christopher@cjparker102</span>
-                    <span className="text-muted"> ~ % </span>
-                    <span className="text-white">whoami</span>
-                  </p>
-                  <p className="text-muted">christopher</p>
+                  <p><span className="text-green-400">[✓]</span> <span className="text-muted">Connecting to Okta API...</span></p>
+                  <p><span className="text-green-400">[✓]</span> <span className="text-muted">Fetching users...</span> <span className="text-white">247 found</span></p>
+                  <p><span className="text-green-400">[✓]</span> <span className="text-muted">Analyzing access patterns...</span></p>
                 </div>
 
-                {/* cat roles.txt */}
+                {/* Progress bar */}
+                <p>
+                  <span className="text-teal">[■■■■■■■■■■]</span>
+                  <span className="text-muted"> 100%</span>
+                </p>
+
+                {/* Scan results box */}
                 <div>
-                  <p>
-                    <span className="text-green-400">christopher@cjparker102</span>
-                    <span className="text-muted"> ~ % </span>
-                    <span className="text-white">cat roles.txt</span>
-                  </p>
-                  <p className="text-white">→ IT Support Analyst @ ID.me</p>
-                  <p className="text-white">→ Okta Certified Professional</p>
-                  <p className="text-white">→ MS CS · Texas A&amp;M</p>
+                  <p className="text-muted">── <span className="text-white">SCAN RESULTS</span> ──────────────────</p>
+                  <p><span className="text-yellow-400">⚠</span>  <span className="text-muted">12 inactive users (90+ days)</span></p>
+                  <p><span className="text-yellow-400">⚠</span>  <span className="text-muted">3 over-provisioned accounts</span></p>
+                  <p><span className="text-yellow-400">⚠</span>  <span className="text-muted">1 suspicious admin escalation</span></p>
+                  <p><span className="text-green-400">✓</span>  <span className="text-muted">MFA enforcement: <span className="text-green-400">enabled</span></span></p>
+                  <p><span className="text-green-400">✓</span>  <span className="text-muted">Zero Trust policies: <span className="text-green-400">compliant</span></span></p>
+                  <p className="text-muted">──────────────────────────────────</p>
                 </div>
 
-                {/* ls projects/ */}
+                {/* Report saved */}
                 <div>
-                  <p>
-                    <span className="text-green-400">christopher@cjparker102</span>
-                    <span className="text-muted"> ~ % </span>
-                    <span className="text-white">ls projects/</span>
-                  </p>
-                  <p className="text-purple">okta-access-reviewer/</p>
-                  <p className="text-purple">okta-chaos-generator/</p>
-                  <p className="text-purple">it-command-dashboard/</p>
-                  <p className="text-purple">iam-offboarding-assistant/</p>
-                </div>
-
-                {/* git status */}
-                <div>
-                  <p>
-                    <span className="text-green-400">christopher@cjparker102</span>
-                    <span className="text-muted"> ~ % </span>
-                    <span className="text-white">git status</span>
-                  </p>
-                  <p className="text-muted">On branch main</p>
-                  <p className="text-muted">nothing to commit, working tree clean</p>
-                </div>
-
-                {/* Status + active prompt */}
-                <div>
+                  <p><span className="text-purple">[!]</span> <span className="text-muted">Report saved →</span> <span className="text-white">access-review.md</span></p>
                   <p className="flex items-center gap-2">
                     <span className="inline-block w-2 h-2 rounded-full bg-green-400 animate-pulse-dot flex-shrink-0" />
-                    <span className="text-muted">
-                      status: <span className="text-green-400">currently active</span>
-                    </span>
-                  </p>
-                  <p className="mt-2">
-                    <span className="text-green-400">christopher@cjparker102</span>
-                    <span className="text-muted"> ~ % </span>
-                    <span className="text-muted/30 cursor-blink" />
+                    <span className="text-muted">scan complete · <span className="text-white">2.3s</span></span>
                   </p>
                 </div>
+
+                {/* Fresh prompt */}
+                <p className="mt-1">
+                  <span className="text-green-400">christopher@cjparker102</span>
+                  <span className="text-muted"> ~/projects % </span>
+                  <span className="text-muted/30 cursor-blink" />
+                </p>
 
               </div>
 
