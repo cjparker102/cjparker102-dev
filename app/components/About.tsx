@@ -11,7 +11,7 @@ const STATS = [
 const STATUS_LINES = [
   { key: "role",     text: "IT Support Analyst @ ID.me"                       },
   { key: "focus",    text: "Building AI-powered IAM tools"                    },
-  { key: "studying", text: "MS CS · Texas A&M Commerce"                       },
+  { key: "studying", text: "MS CS · Texas A&M"                                },
 ];
 
 export default function About() {
