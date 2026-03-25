@@ -44,11 +44,11 @@ const PROJECTS = [
   },
 ] as const;
 
-const STATUS_CFG: Record<string, { color: string; border: string; dot?: boolean }> = {
-  ACTIVE:        { color: "text-green-300", border: "#4A9EBF", dot: true },
-  PUBLIC:        { color: "text-purple",    border: "#4A9EBF" },
-  INTERNAL:      { color: "text-teal",      border: "#E8A83E" },
-  "COMING SOON": { color: "text-muted",     border: "rgba(139,155,173,0.3)" },
+const STATUS_CFG: Record<string, { color: string; dot?: boolean }> = {
+  ACTIVE:        { color: "text-purple", dot: true },
+  PUBLIC:        { color: "text-purple" },
+  INTERNAL:      { color: "text-purple" },
+  "COMING SOON": { color: "text-muted" },
 };
 
 export default function Projects() {
@@ -74,16 +74,16 @@ export default function Projects() {
                     pl-6 py-6
                     ${i < PROJECTS.length - 1 ? "border-b border-white/8" : ""}
                   `}
-                  style={{ borderLeft: `3px solid ${cfg.border}` }}
+                  style={{ borderLeft: "3px solid #4A9EBF" }}
                 >
 
                   {/* Name + status */}
-                  <div className="flex items-center gap-3 mb-2">
-                    <p className="text-white font-bold font-mono text-base">
+                  <div className="flex items-center gap-3 mb-1">
+                    <h3 className="text-teal text-2xl font-bold">
                       {project.name}
-                    </p>
+                    </h3>
                     <span
-                      className={`${cfg.color} flex items-center gap-1.5 text-[11px] font-mono tracking-wider`}
+                      className={`${cfg.color} flex items-center gap-1.5 text-sm font-mono tracking-wider`}
                     >
                       {cfg.dot && (
                         <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse-dot flex-shrink-0" />
@@ -93,13 +93,13 @@ export default function Projects() {
                   </div>
 
                   {/* Description */}
-                  <p className="text-muted text-sm leading-relaxed mb-2">
+                  <p className="text-white text-base leading-relaxed mb-2">
                     {project.description}
                   </p>
 
                   {/* Stack + link */}
                   <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
-                    <p className="text-white/40 text-xs font-mono">
+                    <p className="text-muted text-sm font-mono">
                       {project.stack.join(" · ")}
                     </p>
                     {project.github ? (
