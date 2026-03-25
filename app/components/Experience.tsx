@@ -98,38 +98,52 @@ export default function Experience() {
             }}
           />
 
-          <div className="flex flex-col gap-5 md:gap-6">
+          <div className="flex flex-col gap-6 md:gap-8">
             {EXPERIENCE.map((job, i) => {
               const onRight = i % 2 === 1;
               return (
                 <ScrollReveal key={job.company + job.dates} delay={i * 60}>
-                  <div className="relative">
+                  <div className="relative md:flex">
 
-                    {/* Dot — pinned to center spine */}
+                    {/* Left half */}
+                    <div className={`md:w-1/2 ${onRight ? "hidden md:block md:pr-10" : "md:pr-10"}`}>
+                      {!onRight && (
+                        <div className="md:text-right">
+                          <h3 className="text-teal text-2xl font-bold mb-1">{job.company}</h3>
+                          <p className="text-white text-lg font-medium mb-1">{job.role}</p>
+                          <p className="text-muted text-sm font-mono mb-3">{job.dates} · {job.location}</p>
+                          {job.bullets.map((b, j) => (
+                            <p key={j} className="text-muted text-sm leading-relaxed mb-1">{b}</p>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Center dot */}
                     <span className="hidden md:block absolute left-1/2 -translate-x-1/2 top-2 w-3 h-3 rounded-full bg-teal" />
 
-                    {/* Content — 46% wide, alternating sides, 4% gap to spine */}
-                    <div className={`md:w-[47%] ${onRight ? "md:ml-[53%]" : "md:ml-[6%]"}`}>
-                      <h3 className={`text-teal text-2xl font-bold mb-1 ${onRight ? "" : "md:text-right"}`}>
-                        {job.company}
-                      </h3>
-                      <p className={`text-white text-lg font-medium mb-2 ${onRight ? "" : "md:text-right"}`}>
-                        {job.role}
-                      </p>
-                      <p className={`text-muted text-sm font-mono mb-5 ${onRight ? "" : "md:text-right"}`}>
-                        {job.dates} · {job.location}
-                      </p>
-                      <ul className="flex flex-col gap-2.5">
-                        {job.bullets.map((b, j) => (
-                          <li
-                            key={j}
-                            className="flex items-start gap-2.5 text-base leading-relaxed"
-                          >
-                            <span className="text-teal mt-1 flex-shrink-0 text-sm">▸</span>
-                            <span className="text-muted">{b}</span>
-                          </li>
-                        ))}
-                      </ul>
+                    {/* Right half */}
+                    <div className={`md:w-1/2 ${onRight ? "md:pl-10" : "hidden md:block md:pl-10"}`}>
+                      {onRight && (
+                        <div>
+                          <h3 className="text-teal text-2xl font-bold mb-1">{job.company}</h3>
+                          <p className="text-white text-lg font-medium mb-1">{job.role}</p>
+                          <p className="text-muted text-sm font-mono mb-3">{job.dates} · {job.location}</p>
+                          {job.bullets.map((b, j) => (
+                            <p key={j} className="text-muted text-sm leading-relaxed mb-1">{b}</p>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Mobile fallback */}
+                    <div className="md:hidden">
+                      <h3 className="text-teal text-2xl font-bold mb-1">{job.company}</h3>
+                      <p className="text-white text-lg font-medium mb-1">{job.role}</p>
+                      <p className="text-muted text-sm font-mono mb-3">{job.dates} · {job.location}</p>
+                      {job.bullets.map((b, j) => (
+                        <p key={j} className="text-muted text-sm leading-relaxed mb-1">{b}</p>
+                      ))}
                     </div>
 
                   </div>
