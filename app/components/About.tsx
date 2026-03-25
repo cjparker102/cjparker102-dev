@@ -8,11 +8,6 @@ const STATS = [
   { label: "Mission",       value: "Transitioning to IAM Engineer"            },
 ];
 
-const STATUS_LINES = [
-  { key: "role",     text: "IT Support Analyst @ ID.me"                       },
-  { key: "focus",    text: "Building AI-powered IAM tools"                    },
-  { key: "studying", text: "MS CS · Texas A&M"                                },
-];
 
 export default function About() {
   return (
@@ -94,40 +89,71 @@ export default function About() {
 
               {/* ── Terminal body ────────────────────────────── */}
               <div
-                className="flex-1 px-5 py-5 font-mono flex flex-col"
+                className="flex-1 px-4 py-4 font-mono text-sm flex flex-col gap-4"
                 style={{ background: "#1a1a1a" }}
               >
 
-                {/* Command line */}
-                <p className="text-base mb-4">
-                  <span className="text-teal">$ </span>
-                  <span className="text-purple">cat</span>
-                  <span className="text-white"> status.txt</span>
-                </p>
-
-                {/* Status lines */}
-                <div className="flex flex-col gap-3">
-                  {STATUS_LINES.map(({ key, text }) => (
-                    <div key={key} className="flex items-start gap-3 text-base">
-                      <span className="text-purple mt-0.5">→</span>
-                      <span className="text-white leading-relaxed">{text}</span>
-                    </div>
-                  ))}
+                {/* whoami */}
+                <div>
+                  <p>
+                    <span className="text-green-400">christopher@cjparker102</span>
+                    <span className="text-muted"> ~ % </span>
+                    <span className="text-white">whoami</span>
+                  </p>
+                  <p className="text-muted">christopher</p>
                 </div>
 
-                {/* Currently active badge */}
-                <div className="mt-6 pt-4 border-t border-white/10 flex items-center gap-3">
-                  <span
-                    className="inline-block w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse-dot flex-shrink-0"
-                  />
-                  <span className="text-xs text-muted">
-                    status:{" "}
-                    <span className="text-green-400">currently active</span>
-                  </span>
+                {/* cat roles.txt */}
+                <div>
+                  <p>
+                    <span className="text-green-400">christopher@cjparker102</span>
+                    <span className="text-muted"> ~ % </span>
+                    <span className="text-white">cat roles.txt</span>
+                  </p>
+                  <p className="text-white">→ IT Support Analyst @ ID.me</p>
+                  <p className="text-white">→ Okta Certified Professional</p>
+                  <p className="text-white">→ MS CS · Texas A&amp;M</p>
                 </div>
 
-                {/* Blinking cursor */}
-                <p className="mt-3 text-sm text-muted cursor-blink" />
+                {/* ls projects/ */}
+                <div>
+                  <p>
+                    <span className="text-green-400">christopher@cjparker102</span>
+                    <span className="text-muted"> ~ % </span>
+                    <span className="text-white">ls projects/</span>
+                  </p>
+                  <p className="text-purple">okta-access-reviewer/</p>
+                  <p className="text-purple">okta-chaos-generator/</p>
+                  <p className="text-purple">it-command-dashboard/</p>
+                  <p className="text-purple">iam-offboarding-assistant/</p>
+                </div>
+
+                {/* git status */}
+                <div>
+                  <p>
+                    <span className="text-green-400">christopher@cjparker102</span>
+                    <span className="text-muted"> ~ % </span>
+                    <span className="text-white">git status</span>
+                  </p>
+                  <p className="text-muted">On branch main</p>
+                  <p className="text-muted">nothing to commit, working tree clean</p>
+                </div>
+
+                {/* Status + active prompt */}
+                <div>
+                  <p className="flex items-center gap-2">
+                    <span className="inline-block w-2 h-2 rounded-full bg-green-400 animate-pulse-dot flex-shrink-0" />
+                    <span className="text-muted">
+                      status: <span className="text-green-400">currently active</span>
+                    </span>
+                  </p>
+                  <p className="mt-2">
+                    <span className="text-green-400">christopher@cjparker102</span>
+                    <span className="text-muted"> ~ % </span>
+                    <span className="text-muted/30 cursor-blink" />
+                  </p>
+                </div>
+
               </div>
 
             </div>
