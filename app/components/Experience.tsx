@@ -98,7 +98,7 @@ export default function Experience() {
             }}
           />
 
-          <div className="flex flex-col gap-10 md:gap-12">
+          <div className="flex flex-col gap-8 md:gap-8">
             {EXPERIENCE.map((job, i) => {
               const onRight = i % 2 === 1;
               return (
@@ -119,11 +119,11 @@ export default function Experience() {
                       <p className={`text-muted text-sm font-mono mb-5 ${onRight ? "" : "md:text-right"}`}>
                         {job.dates} · {job.location}
                       </p>
-                      <ul className="flex flex-col gap-2.5">
+                      <ul className={`flex flex-col gap-2.5 ${onRight ? "" : "md:items-end"}`}>
                         {job.bullets.map((b, j) => (
                           <li
                             key={j}
-                            className="flex items-start gap-2.5 text-base leading-relaxed"
+                            className={`flex items-start gap-2.5 text-base leading-relaxed ${onRight ? "" : "md:text-right md:flex-row-reverse"}`}
                           >
                             <span className="text-teal mt-1 flex-shrink-0 text-sm">▸</span>
                             <span className="text-muted">{b}</span>
