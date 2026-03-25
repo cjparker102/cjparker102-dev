@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 
 // Roles to cycle through in the typewriter
 const ROLES = [
-  "Software Engineer",
-  "Full Stack Developer",
-  "Cloud Architect",
-  "Problem Solver",
+  "IAM Engineer",
+  "Okta Certified Professional",
+  "Security Specialist",
+  "AI Builder",
 ];
 
 const TYPE_SPEED   = 80;  // ms per character when typing
@@ -108,8 +108,8 @@ export default function Hero() {
           style={{ animationDelay: "0.65s" }}
         >
           <span className="text-teal">$ </span>
-          Building scalable applications, elegant solutions, and seamless
-          digital experiences.
+          Building AI-powered identity and access management tools at the
+          intersection of security and automation.
         </p>
 
         {/* CTA buttons */}
