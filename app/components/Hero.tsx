@@ -49,20 +49,20 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center grid-bg overflow-hidden"
     >
-      {/* Purple radial glow — top-left */}
+      {/* Blue glow — behind the name block */}
       <div
-        className="pointer-events-none absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full"
+        className="pointer-events-none absolute top-[15%] -left-24 w-[750px] h-[750px] rounded-full"
         style={{
           background:
-            "radial-gradient(circle, rgba(74,158,191,0.12) 0%, transparent 65%)",
+            "radial-gradient(circle, rgba(74,158,191,0.15) 0%, transparent 60%)",
         }}
       />
-      {/* Teal radial glow — bottom-right */}
+      {/* Gold glow — bottom-right, whisper subtle */}
       <div
         className="pointer-events-none absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full"
         style={{
           background:
-            "radial-gradient(circle, rgba(232,168,62,0.08) 0%, transparent 65%)",
+            "radial-gradient(circle, rgba(232,168,62,0.04) 0%, transparent 65%)",
         }}
       />
 
