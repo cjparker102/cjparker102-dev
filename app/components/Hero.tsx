@@ -69,7 +69,7 @@ export default function Hero() {
       <div className="relative z-10 max-w-5xl mx-auto px-6 py-36 w-full">
         {/* Greeting */}
         <p
-          className="text-base font-mono mb-4 animate-fade-in-up"
+          className="text-2xl font-mono mb-4 animate-fade-in-up"
           style={{ animationDelay: "0.1s" }}
         >
           <span className="text-muted">$ </span>
