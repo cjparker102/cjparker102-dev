@@ -95,7 +95,7 @@ export default function Hero() {
           style={{ animationDelay: "0.45s" }}
         >
           <span className="text-teal">[</span>
-          <span className="text-purple" style={{ minWidth: "22ch" }}>
+          <span className="text-purple">
             {displayed}
           </span>
           <span
