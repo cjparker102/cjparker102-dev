@@ -40,7 +40,7 @@ export default function Skills() {
                   flex flex-col md:flex-row md:items-baseline gap-4 md:gap-0
                   py-6 px-4 -mx-4 rounded-sm
                   transition-colors duration-200 hover:bg-purple/[0.06]
-                  ${i < SKILLS.length - 1 ? "border-b border-white/8" : ""}
+                  border-b border-white/[0.06]
                 `}
               >
                 <p
