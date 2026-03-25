@@ -66,7 +66,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6 py-36 w-full">
+      <div className="relative z-10 max-w-5xl mx-auto px-6 pt-32 pb-20 w-full">
         {/* Greeting */}
         <p
           className="text-2xl font-mono mb-4 animate-fade-in-up"
@@ -133,15 +133,15 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted text-xs font-mono animate-fade-in-up"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 animate-fade-in-up"
         style={{ animationDelay: "1.2s" }}
       >
-        <span>scroll down</span>
+        <span className="text-muted text-xs font-mono tracking-widest">scroll down</span>
         <span
-          className="text-purple"
-          style={{ animation: "fadeInUp 0.4s ease-out 1.5s both, glow-pulse 2s ease-in-out 2s infinite" }}
+          className="text-purple text-lg leading-none"
+          style={{ animation: "bounce-scroll 1.6s ease-in-out infinite" }}
         >
-          ▼
+          ↓
         </span>
       </div>
     </section>
