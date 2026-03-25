@@ -151,32 +151,42 @@ body {
 }
 
 /* ─── Button variants ────────────────────────────────────────── */
-.btn-primary {
-  display: inline-block;
-  padding: 0.75rem 1.875rem;
-  background: #E8A83E;
-  color: #080C10;
+.btn-primary,
+.btn-outline-teal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 190px;
+  height: 3rem;
+  padding: 0 1.875rem;
   font-family: inherit;
   font-size: 1rem;
   font-weight: 700;
-  transition: background 0.25s ease, box-shadow 0.25s ease;
-}
-.btn-primary:hover {
-  background: rgba(232,168,62,0.85);
-  box-shadow: 0 0 20px rgba(232,168,62,0.6);
+  box-sizing: border-box;
 }
 
+/* Gold button — sweep to darker gold on hover */
+.btn-primary {
+  background: linear-gradient(to right, #C8862A 50%, #E8A83E 50%);
+  background-size: 200% 100%;
+  background-position: right;
+  color: #080C10;
+  transition: background-position 0.3s ease;
+}
+.btn-primary:hover {
+  background-position: left;
+}
+
+/* Steel-blue outline button — sweep fill on hover */
 .btn-outline-teal {
-  display: inline-block;
-  padding: 0.75rem 1.875rem;
   border: 1px solid #4A9EBF;
+  background: linear-gradient(to right, #4A9EBF 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: right;
   color: #4A9EBF;
-  font-family: inherit;
-  font-size: 1rem;
-  font-weight: 700;
-  transition: background 0.25s ease, box-shadow 0.25s ease;
+  transition: background-position 0.3s ease, color 0.3s ease;
 }
 .btn-outline-teal:hover {
-  background: rgba(74,158,191,0.1);
-  box-shadow: 0 0 20px rgba(74,158,191,0.4);
+  background-position: left;
+  color: #ffffff;
 }
