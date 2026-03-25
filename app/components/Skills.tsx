@@ -17,6 +17,10 @@ const SKILLS = [
     label: "Platforms & Tools",
     items: "JIRA · Microsoft Purview · Docker · Linux · Asset Panda · ServiceNow",
   },
+  {
+    label: "Certifications",
+    items: "Okta Certified Professional · Security+ · Network+ · EC-Council Encryption Specialist",
+  },
 ];
 
 export default function Skills() {
