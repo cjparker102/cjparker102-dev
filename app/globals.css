@@ -142,6 +142,18 @@ body {
   animation: scanline-sweep 1.2s linear forwards;
 }
 
+/* ─── Nav link animated underline ───────────────────────────── */
+.nav-link {
+  position: relative;
+  background: linear-gradient(#E8A83E, #E8A83E) no-repeat left bottom;
+  background-size: 0% 1px;
+  transition: background-size 0.25s ease, color 0.25s ease;
+}
+.nav-link:hover {
+  background-size: 100% 1px;
+  color: #ffffff;
+}
+
 /* ─── Section header style ───────────────────────────────────── */
 .section-label {
   font-size: 0.75rem;

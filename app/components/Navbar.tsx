@@ -33,11 +33,11 @@ export default function Navbar() {
         {/* Logo */}
         <a
           href="#hero"
-          className="font-mono text-xl font-bold tracking-widest select-none"
+          className="group font-mono text-xl font-bold tracking-widest select-none transition-all duration-200 hover:scale-105 hover:tracking-[0.12em] inline-block"
         >
-          <span className="text-teal">{`{`}</span>
+          <span className="text-teal group-hover:text-purple transition-colors duration-200">{`{`}</span>
           <span className="text-white">CJPARKER102.DEV</span>
-          <span className="text-teal">{`}`}</span>
+          <span className="text-teal group-hover:text-purple transition-colors duration-200">{`}`}</span>
         </a>
 
         {/* Desktop links */}
@@ -46,7 +46,7 @@ export default function Navbar() {
             <li key={href}>
               <a
                 href={href}
-                className="text-muted text-sm hover:text-purple transition-colors duration-200"
+                className="nav-link text-muted text-sm"
               >
                 {label}
               </a>
