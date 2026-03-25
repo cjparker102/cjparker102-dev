@@ -4,7 +4,7 @@ import ScrollReveal from "./ScrollReveal";
 const STATS = [
   { label: "Current Role",  value: "IT Support Analyst @ ID.me"              },
   { label: "Location",      value: "McLean, VA  ·  Washington DC Area"        },
-  { label: "Education",     value: "MS Computer Science · Texas A&M (2025–26)" },
+  { label: "Education",     value: "MS Computer Science · Texas A&M" },
   { label: "Mission",       value: "Transitioning to IAM Engineer"            },
 ];
 
