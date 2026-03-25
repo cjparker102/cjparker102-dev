@@ -101,12 +101,12 @@ export default function Experience() {
                     {/* Left half */}
                     <div className={`md:w-1/2 ${onRight ? "hidden md:block md:pr-10" : "md:pr-10"}`}>
                       {!onRight && (
-                        <div>
-                          <h3 className="text-teal text-2xl font-bold mb-1 md:text-right">{job.company}</h3>
-                          <p className="text-white text-lg font-medium mb-1 md:text-right">{job.role}</p>
-                          <p className="text-muted text-sm font-mono mb-3 md:text-right">{job.dates} · {job.location}</p>
+                        <div className="md:text-right">
+                          <h3 className="text-teal text-2xl font-bold mb-1">{job.company}</h3>
+                          <p className="text-white text-lg font-medium mb-1">{job.role}</p>
+                          <p className="text-muted text-sm font-mono mb-3">{job.dates} · {job.location}</p>
                           {job.bullets.map((b, j) => (
-                            <p key={j} className="text-muted text-base leading-relaxed mb-1 md:text-right">{b}</p>
+                            <p key={j} className="text-muted text-base leading-relaxed mb-1">{b}</p>
                           ))}
                         </div>
                       )}
