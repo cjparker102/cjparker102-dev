@@ -7,8 +7,7 @@ const EXPERIENCE = [
     dates:     "2025 – Present",
     location:  "McLean, VA",
     bullets: [
-      "Support identity verification workflows for government and enterprise clients, troubleshooting SSO, MFA, and Okta integration issues.",
-      "Collaborate with IAM engineers to investigate access anomalies and improve helpdesk escalation paths for identity-related incidents.",
+      "Support identity verification workflows for government and enterprise clients, troubleshooting SSO, MFA, and Okta integration issues. Collaborate with IAM engineers to investigate access anomalies and improve helpdesk escalation paths.",
     ],
   },
   {
@@ -17,8 +16,7 @@ const EXPERIENCE = [
     dates:     "2024",
     location:  "Washington, DC",
     bullets: [
-      "Provided technical support for federal employees across multiple DC offices, resolving hardware, software, and network issues.",
-      "Assisted with Active Directory account lifecycle management and access provisioning under federal IT security policies.",
+      "Automated FOIA request processing using Python and Microsoft Purview APIs — reducing processing time by 70% across 500+ monthly requests. Trained 10 team members on Power Automate and SharePoint, cutting onboarding time to 5 days.",
     ],
   },
   {
@@ -27,8 +25,7 @@ const EXPERIENCE = [
     dates:     "2018 – 2021",
     location:  "Austin, TX",
     bullets: [
-      "Resolved complex hardware and software issues for consumer and enterprise customers, consistently maintaining 95 %+ satisfaction scores.",
-      "Mentored junior technicians and contributed to internal knowledge-base articles adopted across multiple support teams.",
+      "Managed XML/SQL metadata pipelines for Apple TV+ achieving zero delivery errors across global platforms. Developed Python scripts automating 20+ daily support checks, saving resolution time by 60%. Onboarded 1,000+ titles at launch.",
     ],
   },
   {
@@ -37,8 +34,7 @@ const EXPERIENCE = [
     dates:     "2018",
     location:  "Mountain View, CA",
     bullets: [
-      "Delivered on-site endpoint support for enterprise clients in Silicon Valley, managing hardware deployments and asset lifecycle tracking.",
-      "Coordinated with infrastructure teams to streamline imaging and provisioning workflows, reducing deployment time by ~30 %.",
+      "Managed Active Directory for 60,000+ employees across US and Shanghai offices. Created Bash automation scripts cutting system maintenance time by 40%.",
     ],
   },
   {
@@ -47,8 +43,7 @@ const EXPERIENCE = [
     dates:     "2017 – 2018",
     location:  "Denver, CO",
     bullets: [
-      "Supported clinical and administrative IT infrastructure across multiple hospital locations in a HIPAA-regulated environment.",
-      "Managed EHR system access provisioning and account management, ensuring compliance with health-sector security standards.",
+      "Supported clinical IT infrastructure across 33 hospitals in a HIPAA-regulated environment. Managed EHR system access provisioning under federal health security standards.",
     ],
   },
   {
@@ -57,8 +52,7 @@ const EXPERIENCE = [
     dates:     "2017",
     location:  "Denver, CO",
     bullets: [
-      "Diagnosed and repaired hardware and software failures across a wide range of consumer and small-business devices.",
-      "Delivered technical consultations that improved customer retention and increased repeat-service bookings.",
+      "Diagnosed and repaired hardware and software failures across consumer and small-business devices.",
     ],
   },
   {
@@ -67,8 +61,7 @@ const EXPERIENCE = [
     dates:     "2013 – 2017",
     location:  "Breinigsville, PA",
     bullets: [
-      "Led inventory control and quality assurance processes inside a high-volume fulfillment center, owning defect-rate reduction initiatives.",
-      "Identified and resolved recurring workflow bottlenecks, contributing to measurable improvements in pick-and-pack throughput.",
+      "Led inventory control and quality assurance in a high-volume fulfillment center. Identified workflow bottlenecks contributing to measurable throughput improvements.",
     ],
   },
 ];
