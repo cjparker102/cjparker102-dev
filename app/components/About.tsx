@@ -74,15 +74,15 @@ export default function About() {
 
               {/* ── macOS title bar ─────────────────────────── */}
               <div
-                className="flex items-center px-4 py-3"
+                className="flex items-center h-9 px-5"
                 style={{ background: "#2d2d2d" }}
               >
-                <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded-full" style={{ background: "#FF5F57" }} />
-                  <span className="w-3 h-3 rounded-full" style={{ background: "#FFBD2E" }} />
-                  <span className="w-3 h-3 rounded-full" style={{ background: "#28C840" }} />
+                <div className="flex items-center gap-[7px]">
+                  <span className="w-3.5 h-3.5 rounded-full" style={{ background: "#FF5F57" }} />
+                  <span className="w-3.5 h-3.5 rounded-full" style={{ background: "#FFBD2E" }} />
+                  <span className="w-3.5 h-3.5 rounded-full" style={{ background: "#28C840" }} />
                 </div>
-                <span className="flex-1 text-center text-muted/60 text-xs font-mono -ml-[52px]">
+                <span className="flex-1 text-center text-muted/60 text-sm font-mono -ml-[60px]">
                   okta-access-reviewer — python3
                 </span>
               </div>
