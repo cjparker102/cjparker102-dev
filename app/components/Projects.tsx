@@ -69,11 +69,9 @@ export default function Projects() {
           {Array.from({ length: Math.ceil(PROJECTS.length / 2) }, (_, row) => {
             const pair = PROJECTS.slice(row * 2, row * 2 + 2);
             return (
-              <div
-                key={row}
-                className="grid md:grid-cols-2 gap-x-12 gap-y-10 py-10"
-                style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}
-              >
+              <div key={row}>
+                <div className="grid md:grid-cols-2 gap-x-12 gap-y-10 py-10">
+
                 {pair.map((project, j) => {
                   const status = STATUS_COLOR[project.status];
                   return (
@@ -120,6 +118,14 @@ export default function Projects() {
                     </ScrollReveal>
                   );
                 })}
+                </div>
+                <div
+                  className="h-px"
+                  style={{
+                    background:
+                      "linear-gradient(to right, transparent, rgba(255,255,255,0.08) 20%, rgba(255,255,255,0.08) 80%, transparent)",
+                  }}
+                />
               </div>
             );
           })}
