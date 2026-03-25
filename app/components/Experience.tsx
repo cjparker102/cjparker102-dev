@@ -7,7 +7,7 @@ const EXPERIENCE = [
     dates:     "2025 – Present",
     location:  "McLean, VA",
     bullets: [
-      "Support identity verification workflows for government and enterprise clients, troubleshooting SSO, MFA, and Okta integration issues. Collaborate with IAM engineers to investigate access anomalies and improve helpdesk escalation paths.",
+      "Okta administration, JAMF fleet management for 500+ users, and AI dashboard pending deployment.",
     ],
   },
   {
@@ -25,7 +25,7 @@ const EXPERIENCE = [
     dates:     "2018 – 2021",
     location:  "Austin, TX",
     bullets: [
-      "Managed XML/SQL metadata pipelines for Apple TV+ achieving zero delivery errors across global platforms. Developed Python scripts automating 20+ daily support checks, saving resolution time by 60%. Onboarded 1,000+ titles at launch.",
+      "Python automation saving resolution time 60%. Managed Apple TV+ metadata pipelines with zero errors.",
     ],
   },
   {
@@ -43,7 +43,7 @@ const EXPERIENCE = [
     dates:     "2017 – 2018",
     location:  "Denver, CO",
     bullets: [
-      "Supported clinical IT infrastructure across 33 hospitals in a HIPAA-regulated environment. Managed EHR system access provisioning under federal health security standards.",
+      "IT infrastructure across 33 hospitals in a HIPAA-regulated environment.",
     ],
   },
   {
@@ -61,7 +61,7 @@ const EXPERIENCE = [
     dates:     "2013 – 2017",
     location:  "Breinigsville, PA",
     bullets: [
-      "Led inventory control and quality assurance in a high-volume fulfillment center. Identified workflow bottlenecks contributing to measurable throughput improvements.",
+      "Inventory control and QA in high-volume fulfillment center.",
     ],
   },
 ];
