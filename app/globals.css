@@ -222,3 +222,13 @@ body {
   border-color: rgba(74,158,191,0.5);
   background-color: rgba(74,158,191,0.03);
 }
+
+/* ─── Cert card ─────────────────────────────────────────────── */
+.cert-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: border-color 0.2s ease;
+}
+.cert-card:hover {
+  border-color: rgba(74,158,191,0.4);
+}
