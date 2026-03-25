@@ -37,33 +37,6 @@ const EXPERIENCE = [
       "Managed Active Directory for 60,000+ employees across US and Shanghai. Bash scripts cut maintenance time by 40%.",
     ],
   },
-  {
-    company:   "SCL Health",
-    role:      "IT Support Specialist",
-    dates:     "2017 – 2018",
-    location:  "Denver, CO",
-    bullets: [
-      "IT infrastructure across 33 hospitals in a HIPAA-regulated environment.",
-    ],
-  },
-  {
-    company:   "Geek Squad",
-    role:      "IT Advanced Repair Agent",
-    dates:     "2017",
-    location:  "Denver, CO",
-    bullets: [
-      "Diagnosed hardware and software failures across consumer and small-business devices.",
-    ],
-  },
-  {
-    company:   "Amazon",
-    role:      "Problem Solver / ICQA",
-    dates:     "2013 – 2017",
-    location:  "Breinigsville, PA",
-    bullets: [
-      "Inventory control and QA in a high-volume fulfillment center.",
-    ],
-  },
 ];
 
 export default function Experience() {
