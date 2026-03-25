@@ -44,11 +44,11 @@ const PROJECTS = [
   },
 ] as const;
 
-const STATUS_CFG: Record<string, { color: string; dot?: boolean }> = {
-  ACTIVE:        { color: "text-purple", dot: true },
-  PUBLIC:        { color: "text-purple" },
-  INTERNAL:      { color: "text-purple" },
-  "COMING SOON": { color: "text-muted" },
+const STATUS_COLOR: Record<string, { className: string; dot?: boolean }> = {
+  ACTIVE:        { className: "text-purple", dot: true },
+  PUBLIC:        { className: "text-purple" },
+  INTERNAL:      { className: "text-purple" },
+  "COMING SOON": { className: "text-muted" },
 };
 
 export default function Projects() {
@@ -64,62 +64,49 @@ export default function Projects() {
           </h2>
         </ScrollReveal>
 
-        <div className="flex flex-col">
+        <div className="grid md:grid-cols-2 gap-x-12 gap-y-14">
           {PROJECTS.map((project, i) => {
-            const cfg = STATUS_CFG[project.status];
+            const status = STATUS_COLOR[project.status];
             return (
               <ScrollReveal key={project.name} delay={i * 80}>
-                <div
-                  className={`
-                    pl-6 py-6
-                    ${i < PROJECTS.length - 1 ? "border-b border-white/8" : ""}
-                  `}
-                  style={{ borderLeft: "3px solid #4A9EBF" }}
-                >
+                <div>
+                  <h3 className="text-teal text-2xl font-bold mb-1">
+                    {project.name}
+                  </h3>
 
-                  {/* Name + status */}
-                  <div className="flex items-center gap-3 mb-1">
-                    <h3 className="text-teal text-2xl font-bold">
-                      {project.name}
-                    </h3>
-                    <span
-                      className={`${cfg.color} flex items-center gap-1.5 text-sm font-mono tracking-wider`}
-                    >
-                      {cfg.dot && (
-                        <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse-dot flex-shrink-0" />
-                      )}
-                      {project.status}
-                    </span>
-                  </div>
+                  <span
+                    className={`${status.className} flex items-center gap-1.5 text-xs font-mono tracking-wider mb-3`}
+                  >
+                    {status.dot && (
+                      <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse-dot flex-shrink-0" />
+                    )}
+                    {project.status}
+                  </span>
 
-                  {/* Description */}
-                  <p className="text-white text-base leading-relaxed mb-2">
+                  <p className="text-white text-base leading-relaxed mb-3">
                     {project.description}
                   </p>
 
-                  {/* Stack + link */}
-                  <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
-                    <p className="text-muted text-sm font-mono">
-                      {project.stack.join(" · ")}
-                    </p>
-                    {project.github ? (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-purple text-xs font-mono transition-colors duration-200 hover:text-white"
-                      >
-                        ▸ github.com/cjparker102/{project.name}
-                      </a>
-                    ) : (
-                      "note" in project && (
-                        <p className="text-muted/30 text-xs font-mono italic">
-                          {project.note}
-                        </p>
-                      )
-                    )}
-                  </div>
+                  <p className="text-muted text-sm font-mono mb-2">
+                    {project.stack.join(" · ")}
+                  </p>
 
+                  {project.github ? (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-purple text-sm font-mono transition-colors duration-200 hover:text-white"
+                    >
+                      ▸ github.com/cjparker102/{project.name}
+                    </a>
+                  ) : (
+                    "note" in project && (
+                      <p className="text-muted/30 text-sm font-mono italic">
+                        {project.note}
+                      </p>
+                    )
+                  )}
                 </div>
               </ScrollReveal>
             );
