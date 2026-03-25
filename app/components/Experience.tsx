@@ -101,12 +101,12 @@ export default function Experience() {
                     {/* Left half */}
                     <div className={`md:w-1/2 ${onRight ? "hidden md:block md:pr-10" : "md:pr-10"}`}>
                       {!onRight && (
-                        <div style={{ textAlign: "right" }}>
-                          <h3 className="text-teal text-2xl font-bold mb-1">{job.company}</h3>
-                          <p className="text-white text-lg font-medium mb-1">{job.role}</p>
-                          <p className="text-muted text-sm font-mono mb-3">{job.dates} · {job.location}</p>
+                        <div>
+                          <h3 style={{ textAlign: "right" }} className="text-teal text-2xl font-bold mb-1">{job.company}</h3>
+                          <p style={{ textAlign: "right" }} className="text-white text-lg font-medium mb-1">{job.role}</p>
+                          <p style={{ textAlign: "right" }} className="text-muted text-sm font-mono mb-3">{job.dates} · {job.location}</p>
                           {job.bullets.map((b, j) => (
-                            <p key={j} className="text-muted text-base leading-relaxed mb-1">{b}</p>
+                            <p style={{ textAlign: "right" }} key={j} className="text-muted text-base leading-relaxed mb-1">{b}</p>
                           ))}
                         </div>
                       )}
@@ -119,11 +119,11 @@ export default function Experience() {
                     <div className={`md:w-1/2 ${onRight ? "md:pl-10" : "hidden md:block md:pl-10"}`}>
                       {onRight && (
                         <div>
-                          <h3 className="text-teal text-2xl font-bold mb-1">{job.company}</h3>
-                          <p className="text-white text-lg font-medium mb-1">{job.role}</p>
-                          <p className="text-muted text-sm font-mono mb-3">{job.dates} · {job.location}</p>
+                          <h3 style={{ textAlign: "left" }} className="text-teal text-2xl font-bold mb-1">{job.company}</h3>
+                          <p style={{ textAlign: "left" }} className="text-white text-lg font-medium mb-1">{job.role}</p>
+                          <p style={{ textAlign: "left" }} className="text-muted text-sm font-mono mb-3">{job.dates} · {job.location}</p>
                           {job.bullets.map((b, j) => (
-                            <p key={j} className="text-muted text-base leading-relaxed mb-1">{b}</p>
+                            <p style={{ textAlign: "left" }} key={j} className="text-muted text-base leading-relaxed mb-1">{b}</p>
                           ))}
                         </div>
                       )}
