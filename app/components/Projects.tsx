@@ -64,51 +64,63 @@ export default function Projects() {
           </h2>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-2 gap-x-12 gap-y-14">
-          {PROJECTS.map((project, i) => {
-            const status = STATUS_COLOR[project.status];
+        <div className="flex flex-col">
+          {/* Group projects into rows of 2 */}
+          {Array.from({ length: Math.ceil(PROJECTS.length / 2) }, (_, row) => {
+            const pair = PROJECTS.slice(row * 2, row * 2 + 2);
             return (
-              <ScrollReveal key={project.name} delay={i * 80}>
-                <div>
-                  <h3 className="text-teal text-2xl font-bold mb-1">
-                    {project.name}
-                  </h3>
+              <div
+                key={row}
+                className="grid md:grid-cols-2 gap-x-12 gap-y-10 py-10"
+                style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}
+              >
+                {pair.map((project, j) => {
+                  const status = STATUS_COLOR[project.status];
+                  return (
+                    <ScrollReveal key={project.name} delay={(row * 2 + j) * 80}>
+                      <div>
+                        <h3 className="text-teal text-2xl font-bold mb-1">
+                          {project.name}
+                        </h3>
 
-                  <span
-                    className={`${status.className} flex items-center gap-1.5 text-xs font-mono tracking-wider mb-3`}
-                  >
-                    {status.dot && (
-                      <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse-dot flex-shrink-0" />
-                    )}
-                    {project.status}
-                  </span>
+                        <span
+                          className={`${status.className} flex items-center gap-1.5 text-xs font-mono tracking-wider mb-3`}
+                        >
+                          {status.dot && (
+                            <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse-dot flex-shrink-0" />
+                          )}
+                          {project.status}
+                        </span>
 
-                  <p className="text-white text-base leading-relaxed mb-3">
-                    {project.description}
-                  </p>
+                        <p className="text-white text-base leading-relaxed mb-3">
+                          {project.description}
+                        </p>
 
-                  <p className="text-muted text-sm font-mono mb-2">
-                    {project.stack.join(" · ")}
-                  </p>
+                        <p className="text-muted text-sm font-mono mb-2">
+                          {project.stack.join(" · ")}
+                        </p>
 
-                  {project.github ? (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-purple text-sm font-mono transition-colors duration-200 hover:text-white"
-                    >
-                      ▸ github.com/cjparker102/{project.name}
-                    </a>
-                  ) : (
-                    "note" in project && (
-                      <p className="text-muted/30 text-sm font-mono italic">
-                        {project.note}
-                      </p>
-                    )
-                  )}
-                </div>
-              </ScrollReveal>
+                        {project.github ? (
+                          <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-purple text-sm font-mono transition-colors duration-200 hover:text-white"
+                          >
+                            ▸ github.com/cjparker102/{project.name}
+                          </a>
+                        ) : (
+                          "note" in project && (
+                            <p className="text-muted/30 text-sm font-mono italic">
+                              {project.note}
+                            </p>
+                          )
+                        )}
+                      </div>
+                    </ScrollReveal>
+                  );
+                })}
+              </div>
             );
           })}
         </div>
