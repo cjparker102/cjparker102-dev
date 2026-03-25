@@ -69,19 +69,24 @@ export default function Hero() {
       <div className="relative z-10 max-w-5xl mx-auto px-6 py-36 w-full">
         {/* Greeting */}
         <p
-          className="text-sm font-mono mb-3 animate-fade-in-up"
+          className="text-sm font-mono mb-4 animate-fade-in-up"
           style={{ animationDelay: "0.1s" }}
         >
           <span className="text-muted">$ </span>
           <span className="text-teal">Hello, I&apos;m</span>
         </p>
 
-        {/* Name */}
+        {/* Name — stacked */}
         <h1
-          className="text-7xl sm:text-8xl lg:text-9xl font-black tracking-tight leading-none mb-4 animate-fade-in-up text-white"
+          className="font-black tracking-tighter leading-[0.88] mb-6 animate-fade-in-up"
           style={{ animationDelay: "0.25s" }}
         >
-          CJ<span className="text-purple"> PARKER</span>
+          <span className="block text-white text-[clamp(4rem,13vw,9rem)]">
+            CHRISTOPHER
+          </span>
+          <span className="block text-purple text-[clamp(4rem,13vw,9rem)]">
+            PARKER
+          </span>
         </h1>
 
         {/* Typewriter role */}
