@@ -119,11 +119,11 @@ export default function Experience() {
                       <p className={`text-muted text-sm font-mono mb-5 ${onRight ? "" : "md:text-right"}`}>
                         {job.dates} · {job.location}
                       </p>
-                      <ul className={`flex flex-col gap-2.5 ${onRight ? "" : "md:items-end"}`}>
+                      <ul className={`flex flex-col gap-2.5 ${onRight ? "" : "md:ml-auto md:w-[85%]"}`}>
                         {job.bullets.map((b, j) => (
                           <li
                             key={j}
-                            className={`flex items-start gap-2.5 text-base leading-relaxed ${onRight ? "" : "md:text-right md:flex-row-reverse"}`}
+                            className="flex items-start gap-2.5 text-base leading-relaxed"
                           >
                             <span className="text-teal mt-1 flex-shrink-0 text-sm">▸</span>
                             <span className="text-muted">{b}</span>
