@@ -25,9 +25,9 @@ export default function Contact() {
             href="mailto:iam@cjparker102.dev"
             className="email-cta inline-block font-mono text-2xl sm:text-3xl lg:text-4xl tracking-wide mb-16 transition-all duration-300"
           >
-            <span className="text-teal">[</span>
-            <span className="text-white"> iam@cjparker102.dev </span>
-            <span className="text-teal">]</span>
+            <span className="bracket text-teal">[</span>
+            <span className="addr text-white/80"> iam@cjparker102.dev </span>
+            <span className="bracket text-teal">]</span>
           </a>
         </ScrollReveal>
 
