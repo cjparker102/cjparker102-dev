@@ -72,7 +72,7 @@ export default function Contact() {
           />
           <div className="flex items-end justify-between">
             <p className="text-muted/40 text-xs font-mono">
-              © {new Date().getFullYear()} <span className="text-white/60">Christopher Parker</span> · cjparker102.dev
+              © {new Date().getFullYear()} cjparker102.dev
             </p>
             <div className="text-right">
               <p className="text-muted/40 text-xs font-mono">
