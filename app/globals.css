@@ -166,8 +166,8 @@ body {
 
 /* ─── Section header style ───────────────────────────────────── */
 .section-label {
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
+  font-size: 1rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #E8A83E;
 }

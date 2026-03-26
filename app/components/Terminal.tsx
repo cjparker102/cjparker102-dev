@@ -150,24 +150,20 @@ export default function Terminal() {
         className="flex-1 px-4 py-4 font-mono text-sm flex flex-col gap-1 overflow-y-auto"
         style={{ background: "#1a1a1a", minHeight: "320px" }}
       >
-        {/* Typing prompt */}
-        {step === 0 && (
-          <p>
-            <span className="text-green-400">{PROMPT}</span>
-            <span className="text-muted">{CWD}</span>
-            <span className="text-white">{typedCmd}</span>
-            <span className="cursor-blink" />
-          </p>
-        )}
-
-        {/* Command submitted */}
-        {step >= 1 && (
-          <p>
-            <span className="text-green-400">{PROMPT}</span>
-            <span className="text-muted">{CWD}</span>
+        {/* Prompt — always visible */}
+        <p>
+          <span className="text-green-400">{PROMPT}</span>
+          <span className="text-muted">{CWD}</span>
+          {step < 1 && (
+            <>
+              <span className="text-white">{typedCmd}</span>
+              <span className="cursor-blink" />
+            </>
+          )}
+          {step >= 1 && (
             <span className="text-white">{CMD}</span>
-          </p>
-        )}
+          )}
+        </p>
 
         {step >= 1 && <p className="h-1" />}
 

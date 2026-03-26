@@ -1,6 +1,25 @@
 import ScrollReveal from "./ScrollReveal";
 
-const EXPERIENCE = [
+type Entry = {
+  company: string;
+  role: string;
+  dates: string;
+  location: string;
+  bullets: string[];
+  type?: "education";
+};
+
+const EXPERIENCE: Entry[] = [
+  {
+    company:   "Texas A&M University",
+    role:      "Master of Computer Science",
+    dates:     "2025 – 2026",
+    location:  "Remote",
+    type:      "education",
+    bullets: [
+      "Currently pursuing graduate degree in Computer Science with focus on AI and security systems.",
+    ],
+  },
   {
     company:   "ID.me",
     role:      "IT Support Analyst",
@@ -17,6 +36,16 @@ const EXPERIENCE = [
     location:  "Washington, DC",
     bullets: [
       "Automated FOIA processing with Python — cutting time by 70% across 500+ monthly requests. Trained 10 team members on Power Automate.",
+    ],
+  },
+  {
+    company:   "Sam Houston State University",
+    role:      "BS Cybersecurity",
+    dates:     "2022 – 2024",
+    location:  "Huntsville, TX",
+    type:      "education",
+    bullets: [
+      "Studied cybersecurity with focus on identity and access management. Study abroad in Taiwan — security and computer science program.",
     ],
   },
   {
@@ -67,6 +96,7 @@ export default function Experience() {
           <div className="flex flex-col gap-3 md:gap-4">
             {EXPERIENCE.map((job, i) => {
               const onRight = i % 2 === 1;
+              const nameColor = job.type === "education" ? "text-purple" : "text-teal";
               return (
                 <ScrollReveal key={job.company + job.dates} delay={i * 60}>
                   <div className="relative md:flex">
@@ -75,7 +105,7 @@ export default function Experience() {
                     <div className={`md:w-1/2 ${onRight ? "hidden md:block md:pr-10" : "md:pr-10"}`}>
                       {!onRight && (
                         <div>
-                          <h3 style={{ textAlign: "right" }} className="text-teal text-2xl font-bold mb-1">{job.company}</h3>
+                          <h3 style={{ textAlign: "right" }} className={`${nameColor} text-2xl font-bold mb-1`}>{job.company}</h3>
                           <p style={{ textAlign: "right" }} className="text-white text-lg font-medium mb-1">{job.role}</p>
                           <p style={{ textAlign: "right" }} className="text-muted text-sm font-mono mb-3">{job.dates} · {job.location}</p>
                           {job.bullets.map((b, j) => (
@@ -92,7 +122,7 @@ export default function Experience() {
                     <div className={`md:w-1/2 ${onRight ? "md:pl-10" : "hidden md:block md:pl-10"}`}>
                       {onRight && (
                         <div>
-                          <h3 style={{ textAlign: "left" }} className="text-teal text-2xl font-bold mb-1">{job.company}</h3>
+                          <h3 style={{ textAlign: "left" }} className={`${nameColor} text-2xl font-bold mb-1`}>{job.company}</h3>
                           <p style={{ textAlign: "left" }} className="text-white text-lg font-medium mb-1">{job.role}</p>
                           <p style={{ textAlign: "left" }} className="text-muted text-sm font-mono mb-3">{job.dates} · {job.location}</p>
                           {job.bullets.map((b, j) => (
@@ -104,7 +134,7 @@ export default function Experience() {
 
                     {/* Mobile fallback */}
                     <div className="md:hidden">
-                      <h3 className="text-teal text-2xl font-bold mb-1">{job.company}</h3>
+                      <h3 className={`${nameColor} text-2xl font-bold mb-1`}>{job.company}</h3>
                       <p className="text-white text-lg font-medium mb-1">{job.role}</p>
                       <p className="text-muted text-sm font-mono mb-3">{job.dates} · {job.location}</p>
                       {job.bullets.map((b, j) => (
