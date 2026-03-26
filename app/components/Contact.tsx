@@ -2,7 +2,7 @@ import ScrollReveal from "./ScrollReveal";
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative py-32 px-6">
+    <section id="contact" className="relative pt-32 pb-12 px-6">
       <div className="max-w-4xl mx-auto text-center">
 
         {/* Section label */}
@@ -70,13 +70,18 @@ export default function Contact() {
             className="h-px mb-8"
             style={{ background: "linear-gradient(to right, transparent, rgba(255,255,255,0.15) 20%, rgba(255,255,255,0.15) 80%, transparent)" }}
           />
-          <div className="flex items-center justify-between">
+          <div className="flex items-end justify-between">
             <p className="text-muted/40 text-xs font-mono">
-              cjparker102.dev — {new Date().getFullYear()}
+              © {new Date().getFullYear()} <span className="text-white/60">Christopher Parker</span> · cjparker102.dev
             </p>
-            <p className="text-muted/40 text-xs font-mono">
-              built with Next.js + Tailwind
-            </p>
+            <div className="text-right">
+              <p className="text-muted/40 text-xs font-mono">
+                Designed &amp; built by <span className="text-white/60">Christopher Parker</span>
+              </p>
+              <p className="text-muted/40 text-xs font-mono mt-0.5">
+                Next.js · Tailwind CSS · Hosted on Cloudflare
+              </p>
+            </div>
           </div>
         </ScrollReveal>
 
