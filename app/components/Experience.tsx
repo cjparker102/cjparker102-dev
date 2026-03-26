@@ -11,6 +11,15 @@ type Entry = {
 
 const EXPERIENCE: Entry[] = [
   {
+    company:   "ID.me",
+    role:      "IT Support Analyst",
+    dates:     "2025 – Present",
+    location:  "McLean, VA",
+    bullets: [
+      "Okta administration and JAMF fleet management for 500+ users. Built AI-powered IT dashboard pending department deployment.",
+    ],
+  },
+  {
     company:   "Texas A&M University",
     role:      "Master of Computer Science",
     dates:     "2025 – 2026",
@@ -18,15 +27,6 @@ const EXPERIENCE: Entry[] = [
     type:      "education",
     bullets: [
       "Currently pursuing graduate degree in Computer Science with focus on AI and security systems.",
-    ],
-  },
-  {
-    company:   "ID.me",
-    role:      "IT Support Analyst",
-    dates:     "2025 – Present",
-    location:  "McLean, VA",
-    bullets: [
-      "Okta administration and JAMF fleet management for 500+ users. Built AI-powered IT dashboard pending department deployment.",
     ],
   },
   {
