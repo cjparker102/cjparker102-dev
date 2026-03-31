@@ -27,6 +27,14 @@ const PROJECTS = [
     github: "https://github.com/cjparker102/okta-chaos-generator",
   },
   {
+    name: "okta-as-code",
+    status: "PUBLIC" as const,
+    description:
+      "Terraform-managed Okta infrastructure — groups, apps, MFA policies, and custom admin roles defined as code.",
+    stack: ["Terraform", "HCL", "Okta Provider"],
+    github: "https://github.com/cjparker102/okta-as-code",
+  },
+  {
     name: "iam-offboarding-assistant",
     status: "COMING SOON" as const,
     description:
