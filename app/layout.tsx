@@ -11,7 +11,7 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Christopher Parker | IAM Engineer",
   description:
-    "Personal portfolio of CJ Parker — IAM engineer building identity security tools, Okta automation, and infrastructure as code.",
+    "Personal portfolio of Christopher Parker — IAM engineer building identity security tools, Okta automation, and infrastructure as code.",
   metadataBase: new URL("https://cjparker102.dev"),
 };
 
