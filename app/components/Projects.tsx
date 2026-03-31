@@ -3,7 +3,7 @@ import ScrollReveal from "./ScrollReveal";
 const PROJECTS = [
   {
     name: "okta-access-reviewer",
-    status: "ACTIVE" as const,
+    status: "PUBLIC" as const,
     description:
       "AI-powered Okta access pattern analyzer — flags inactive users, over-provisioned accounts, and anomalies.",
     stack: ["Python", "Okta SDK", "Claude API"],
