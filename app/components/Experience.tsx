@@ -54,7 +54,7 @@ const EXPERIENCE: Entry[] = [
     dates:     "2018 – 2021",
     location:  "Austin, TX",
     bullets: [
-      "Managed Apple TV+ metadata pipelines with zero delivery errors. Python automation saved resolution time by 60%.",
+      "Technical support for Apple TV+ platform operations. Built Python automation that reduced issue resolution time by 60%.",
     ],
   },
   {

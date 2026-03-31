@@ -7,7 +7,7 @@ const ROLES = [
   "IAM Engineer",
   "Okta Certified Professional",
   "Security Specialist",
-  "AI Builder",
+  "Identity Automation",
 ];
 
 const TYPE_SPEED   = 80;  // ms per character when typing
