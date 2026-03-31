@@ -6,8 +6,8 @@ const SKILLS = [
     items: "Okta · AWS IAM · Azure AD · Active Directory · SAML · OAuth 2.0 · OIDC · Zero Trust · MFA · SSO · PAM · JAMF Pro",
   },
   {
-    label: "Languages",
-    items: "Python · Bash · Terraform · Git · Node.js",
+    label: "Languages & IaC",
+    items: "Python · Bash · Terraform · HCL · Git · Node.js",
   },
   {
     label: "Security",
@@ -15,7 +15,7 @@ const SKILLS = [
   },
   {
     label: "Platforms & Tools",
-    items: "JIRA · Microsoft Purview · Docker · Linux · Asset Panda · ServiceNow",
+    items: "JIRA · Docker · Linux · ServiceNow · Microsoft Purview · Asset Panda",
   },
   {
     label: "Certifications",
