@@ -6,7 +6,7 @@ const SKILLS = [
     items: "Okta · AWS IAM · Azure AD · Active Directory · SAML · OAuth 2.0 · OIDC · Zero Trust · MFA · SSO · PAM · JAMF Pro",
   },
   {
-    label: "Languages & IaC",
+    label: "Languages & Automation",
     items: "Python · Bash · Terraform · HCL · Git · Node.js",
   },
   {
